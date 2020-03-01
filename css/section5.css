@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+body {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 1280px;
+    height: 750px;
+    /* border: 1px solid red; */
+    /* background-color: rgb(87, 60, 60); */
+}
+
+.container .little-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 750px;
+    /* border: 1px solid red; */
+    background-image: url("../svg/blackBoard2.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.container .title {
+    font-size: 2em;
+    margin-top: 25px;
+    height: 20px;
+    /* border: 1px solid red; */
+}
+
+#typing1 {
+    margin-top: 50px;
+    font-size: 2em;
+    text-align: left;
+    width: 1000px;
+    color: #ffffff;
+    height: 160px;
+    /* border: 1px solid #ffffff; */
+}
+
+a.next {
+    color: #ffffff;
+    display: block;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: -25px;
+    margin-left: -1020px;
+    display: none;
+}
+
+a.next:hover {
+    color: yellow;
+    font-size: 1.2em;
+}
+
+.chart {
+    width: 600px;
+    height: 390px;
+    /* border: 10px solid red; */
+    /* z-index: 1000000; */
+}
+
+.guess {
+    width: 800px;
+    height: 390px;
+    /* border: 1px solid red; */
+    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+}
+
+.guess .sex,
+.static-title {
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.boy,
+.girl {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* cursor: none; */
+}
+
+.box {
+    width: 800px;
+    height: 50px;
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    ;
+    align-items: center;
+}
+
+.box .year {
+    color: #ffffff;
+    width: 140px;
+    /* width: 100px; */
+}
+
+div[class^="rectnum"] {
+    width: 80px;
+    height: 50px;
+    color: #ffffff;
+    /* border: 1px solid yellow; */
+    text-align: center;
+}
+
+div[class^="rectbox"] {
+    width: 80px;
+    height: 25px;
+    border: 1px solid yellow;
+    cursor: pointer;
+}
+
+.btn {
+    display: flex;
+    color: #ffffff;
+    /* justify-content: center; */
+    display: none;
+}
+
+.rest {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+#send,
+#next {
+    border: 1px solid #ffffff;
+}
+
+.send {
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.rest:hover,
+.send:hover {
+    font-size: 1.5em;
+}

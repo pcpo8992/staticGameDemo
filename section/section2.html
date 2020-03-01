@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/section.css">
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>情境體驗(二)</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="little-container">
+            <div class="title">情境體驗(二)</div>
+            <div id="typing1"> </div>
+            <div class="rect">
+                <div class="guess">
+                    <div class="box">
+                        <div class="rectnum">90%~100%</div>
+                        <div class="rectnum">80%~90%</div>
+                        <div class="rectnum">70%~80%</div>
+                        <div class="rectnum">60%~70%</div>
+                        <div class="rectnum">50%~60%</div>
+                        <div class="rectnum">40%~50%</div>
+                        <div class="rectnum">30%~40%</div>
+                        <div class="rectnum">20%~30%</div>
+                        <div class="rectnum">10%~20%</div>
+                        <div class="rectnum">0%~10%</div>
+                        <div class="rectnum">比率</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox10" id="box1rectbox10" onclick="chooseColor('box1',10)" onmouseout="clearColor('box1')" onmouseover="put('box1','10')"></div>
+                        <div class="rectbox9" id="box1rectbox9" onclick="chooseColor('box1',9)" onmouseout="clearColor('box1')" onmouseover="put('box1','9')"></div>
+                        <div class="rectbox8" id="box1rectbox8" onclick="chooseColor('box1',8)" onmouseout="clearColor('box1')" onmouseover="put('box1','8')"></div>
+                        <div class="rectbox7" id="box1rectbox7" onclick="chooseColor('box1',7)" onmouseout="clearColor('box1')" onmouseover="put('box1','7')"></div>
+                        <div class="rectbox6" id="box1rectbox6" onclick="chooseColor('box1',6)" onmouseout="clearColor('box1')" onmouseover="put('box1','6')"></div>
+                        <div class="rectbox5" id="box1rectbox5" onclick="chooseColor('box1',5)" onmouseout="clearColor('box1')" onmouseover="put('box1','5')"></div>
+                        <div class="rectbox4" id="box1rectbox4" onclick="chooseColor('box1',4)" onmouseout="clearColor('box1')" onmouseover="put('box1','4')"></div>
+                        <div class="rectbox3" id="box1rectbox3" onclick="chooseColor('box1',3)" onmouseout="clearColor('box1')" onmouseover="put('box1','3')"></div>
+                        <div class="rectbox2" id="box1rectbox2" onclick="chooseColor('box1',2)" onmouseout="clearColor('box1')" onmouseover="put('box1','2')"></div>
+                        <div class="rectbox1" id="box1rectbox1" onclick="chooseColor('box1',1)" onmouseout="clearColor('box1')" onmouseover="put('box1','1')"></div>
+                        <div class="year">104年</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox10" id="box2rectbox10" onclick="chooseColor('box2',10)" onmouseout="clearColor('box2')" onmouseover="put('box2','10')"></div>
+                        <div class="rectbox9" id="box2rectbox9" onclick="chooseColor('box2',9)" onmouseout="clearColor('box2')" onmouseover="put('box2','9')"></div>
+                        <div class="rectbox8" id="box2rectbox8" onclick="chooseColor('box2',8)" onmouseout="clearColor('box2')" onmouseover="put('box2','8')"></div>
+                        <div class="rectbox7" id="box2rectbox7" onclick="chooseColor('box2',7)" onmouseout="clearColor('box2')" onmouseover="put('box2','7')"></div>
+                        <div class="rectbox6" id="box2rectbox6" onclick="chooseColor('box2',6)" onmouseout="clearColor('box2')" onmouseover="put('box2','6')"></div>
+                        <div class="rectbox5" id="box2rectbox5" onclick="chooseColor('box2',5)" onmouseout="clearColor('box2')" onmouseover="put('box2','5')"></div>
+                        <div class="rectbox4" id="box2rectbox4" onclick="chooseColor('box2',4)" onmouseout="clearColor('box2')" onmouseover="put('box2','4')"></div>
+                        <div class="rectbox3" id="box2rectbox3" onclick="chooseColor('box2',3)" onmouseout="clearColor('box2')" onmouseover="put('box2','3')"></div>
+                        <div class="rectbox2" id="box2rectbox2" onclick="chooseColor('box2',2)" onmouseout="clearColor('box2')" onmouseover="put('box2','2')"></div>
+                        <div class="rectbox2" id="box2rectbox1" onclick="chooseColor('box2',1)" onmouseout="clearColor('box2')" onmouseover="put('box2','1')"></div>
+                        <div class="year">105年</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox10" id="box3rectbox10" onclick="chooseColor('box3',10)" onmouseout="clearColor('box3')" onmouseover="put('box3','10')"></div>
+                        <div class="rectbox9" id="box3rectbox9" onclick="chooseColor('box3',9)" onmouseout="clearColor('box3')" onmouseover="put('box3','9')"></div>
+                        <div class="rectbox8" id="box3rectbox8" onclick="chooseColor('box3',8)" onmouseout="clearColor('box3')" onmouseover="put('box3','8')"></div>
+                        <div class="rectbox7" id="box3rectbox7" onclick="chooseColor('box3',7)" onmouseout="clearColor('box3')" onmouseover="put('box3','7')"></div>
+                        <div class="rectbox6" id="box3rectbox6" onclick="chooseColor('box3',6)" onmouseout="clearColor('box3')" onmouseover="put('box3','6')"></div>
+                        <div class="rectbox5" id="box3rectbox5" onclick="chooseColor('box3',5)" onmouseout="clearColor('box3')" onmouseover="put('box3','5')"></div>
+                        <div class="rectbox4" id="box3rectbox4" onclick="chooseColor('box3',4)" onmouseout="clearColor('box3')" onmouseover="put('box3','4')"></div>
+                        <div class="rectbox3" id="box3rectbox3" onclick="chooseColor('box3',3)" onmouseout="clearColor('box3')" onmouseover="put('box3','3')"></div>
+                        <div class="rectbox2" id="box3rectbox2" onclick="chooseColor('box3',2)" onmouseout="clearColor('box3')" onmouseover="put('box3','2')"></div>
+                        <div class="rectbox3" id="box3rectbox1" onclick="chooseColor('box3',1)" onmouseout="clearColor('box3')" onmouseover="put('box3','1')"></div>
+                        <div class="year">106年</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox10" id="box4rectbox10" onclick="chooseColor('box4',10)" onmouseout="clearColor('box4')" onmouseover="put('box4','10')"></div>
+                        <div class="rectbox9" id="box4rectbox9" onclick="chooseColor('box4',9)" onmouseout="clearColor('box4')" onmouseover="put('box4','9')"></div>
+                        <div class="rectbox8" id="box4rectbox8" onclick="chooseColor('box4',8)" onmouseout="clearColor('box4')" onmouseover="put('box4','8')"></div>
+                        <div class="rectbox7" id="box4rectbox7" onclick="chooseColor('box4',7)" onmouseout="clearColor('box4')" onmouseover="put('box4','7')"></div>
+                        <div class="rectbox6" id="box4rectbox6" onclick="chooseColor('box4',6)" onmouseout="clearColor('box4')" onmouseover="put('box4','6')"></div>
+                        <div class="rectbox5" id="box4rectbox5" onclick="chooseColor('box4',5)" onmouseout="clearColor('box4')" onmouseover="put('box4','5')"></div>
+                        <div class="rectbox4" id="box4rectbox4" onclick="chooseColor('box4',4)" onmouseout="clearColor('box4')" onmouseover="put('box4','4')"></div>
+                        <div class="rectbox3" id="box4rectbox3" onclick="chooseColor('box4',3)" onmouseout="clearColor('box4')" onmouseover="put('box4','3')"></div>
+                        <div class="rectbox2" id="box4rectbox2" onclick="chooseColor('box4',2)" onmouseout="clearColor('box4')" onmouseover="put('box4','2')"></div>
+                        <div class="rectbox1" id="box4rectbox1" onclick="chooseColor('box4',1)" onmouseout="clearColor('box4')" onmouseover="put('box4','1')"></div>
+                        <div class="year">107年</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox10" id="box5rectbox10" onclick="chooseColor('box5',10)" onmouseout="clearColor('box5')" onmouseover="put('box5','10')"></div>
+                        <div class="rectbox9" id="box5rectbox9" onclick="chooseColor('box5',9)" onmouseout="clearColor('box5')" onmouseover="put('box5','9')"></div>
+                        <div class="rectbox8" id="box5rectbox8" onclick="chooseColor('box5',8)" onmouseout="clearColor('box5')" onmouseover="put('box5','8')"></div>
+                        <div class="rectbox7" id="box5rectbox7" onclick="chooseColor('box5',7)" onmouseout="clearColor('box5')" onmouseover="put('box5','7')"></div>
+                        <div class="rectbox6" id="box5rectbox6" onclick="chooseColor('box5',6)" onmouseout="clearColor('box5')" onmouseover="put('box5','6')"></div>
+                        <div class="rectbox5" id="box5rectbox5" onclick="chooseColor('box5',5)" onmouseout="clearColor('box5')" onmouseover="put('box5','5')"></div>
+                        <div class="rectbox4" id="box5rectbox4" onclick="chooseColor('box5',4)" onmouseout="clearColor('box5')" onmouseover="put('box5','4')"></div>
+                        <div class="rectbox3" id="box5rectbox3" onclick="chooseColor('box5',3)" onmouseout="clearColor('box5')" onmouseover="put('box5','3')"></div>
+                        <div class="rectbox2" id="box5rectbox2" onclick="chooseColor('box5',2)" onmouseout="clearColor('box5')" onmouseover="put('box5','2')"></div>
+                        <div class="rectbox1" id="box5rectbox1" onclick="chooseColor('box5',1)" onmouseout="clearColor('box5')" onmouseover="put('box5','1')"></div>
+                        <div class="year">108年</div>
+                    </div>
+                    <div class="btn">
+                    </div>
+                </div>
+                <canvas id="myChart" style="display:none;" width="400" height="200"></canvas>
+            </div>
+
+            <div class="btn" id="btn">
+                <div class="rest" id="rest" onclick="rest()">重新設定</div>
+                <div class="send" id="send" onclick="send()">看統計結果</div>
+            </div>
+            <a href="./section3.html" class="next">下一關</a>
+        </div>
+    </div>
+
+    <script>
+        var str = '地檢署104年至108年執行酒駕案件裁判確定有罪者，你認為酒駕案件的定罪率應該是多少呢？<sapn style="color: yellow">(依每年度可圈選定罪率百分比)</span>';
+        // var str = '1';
+        var i = 0;
+
+        function typing() {
+            var divTyping = document.getElementById('typing1');
+            if (i <= str.length) {
+                divTyping.innerHTML = str.slice(0, i++) + '_';
+                setTimeout('typing()', 90); //遞歸調用
+            } else {
+                divTyping.innerHTML = str; //結束打字,移除 _ 光標  
+                document.querySelector('.guess').setAttribute("style", "display: flex");
+                document.querySelector('#btn').setAttribute("style", "display: flex");
+                document.querySelector('a.next').setAttribute("style", "display: block");
+            }
+        }
+        typing();
+
+        function put(boxtype, num) {
+            for (i = 1; i <= num; i++) {
+                boxstr = "#" + boxtype + "rectbox" + i.toString()
+                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
+                    // document.getElementById("rectbox" + i.toString().setAttribute("style", "background-color: yellow;"));
+            }
+        }
+
+        function clearColor(boxtype) {
+            for (i = 1; i <= 10; i++) {
+                boxstr = "#" + boxtype + "rectbox" + i.toString()
+                document.querySelector(boxstr).removeAttribute("style", "background-color: yellow;");
+            }
+        }
+
+        function chooseColor(boxtype, num) {
+            for (i = 1; i <= num; i++) {
+                boxstr = "#" + boxtype + "rectbox" + i.toString()
+                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
+                document.querySelector(boxstr).onmouseout = function() {
+                    // alert();
+                };
+                document.querySelector(boxstr).onmouseover = function() {
+
+                };
+            }
+            for (i = num; i <= 10; i++) {
+                boxstr = "#" + boxtype + "rectbox" + i.toString()
+                document.querySelector(boxstr).onmouseout = function() {
+                    // alert();
+                };
+                document.querySelector(boxstr).onmouseover = function() {
+
+                };
+            }
+        }
+
+        function rest() {
+            for (i = 1; i <= 5; i++) {
+                for (j = 1; j <= 10; j++) {
+                    boxstr = "#box" + i.toString() + "rectbox" + j.toString()
+                    document.querySelector(boxstr).removeAttribute("style", "background-color: yellow;");
+                }
+            }
+        }
+
+        function send(){
+            document.querySelector('.guess').setAttribute("style", "display: none");
+            document.querySelector('#btn').setAttribute("style", "display: none");
+            document.querySelector("#myChart").setAttribute("style", "display:block;width:670px;background-color: white;");
+        }
+
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ['104年', '105年', '106年', '107年', '108年'],
+                datasets: [{
+                    label: '定罪率',
+                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
+                    borderColor: 'rgba(255, 99, 132, 0.8)',
+                    data: [100, 94, 96, 100, 100, ],
+                    barPercentage: 0.5,
+                    barThickness: 6,
+                    maxBarThickness: 8,
+                    minBarLength: 2,
+                }],
+            },
+
+            // Configuration options go here
+            options: {
+                scales: {
+                    xAxes: [{
+                        stacked: true
+                    }],
+                    yAxes: [{
+                        stacked: true
+                    }]
+                }
+            },
+            legend: {
+            labels: {
+                // This more specific font property overrides the global property
+                fontColor: 'white'
+            }
+        }
+                
+        });
+    </script>
+
+</body>
+
+</html>

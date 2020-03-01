@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/section4.css">
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>情境體驗(四)</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="little-container">
+            <div class="title">情境體驗(四)</div>
+            <div id="typing1"> </div>
+            <div class="rect">
+                <div class="guess">
+                  <div class="sex" id='sex'>男性</div>
+                  <div class="boy">
+                    <div class="box">
+                        <div class="rectnum">40%~50%</div>
+                        <div class="rectnum">30%~40%</div>
+                        <div class="rectnum">20%~30%</div>
+                        <div class="rectnum">10%~20%</div>
+                        <div class="rectnum">0%~10%</div>
+                        <div class="rectnum">比率</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox" id="box1rectbox5" onclick="chooseColor('box1',5)" onmouseout="clearColor('box1', '5')" onmouseover="put('box1','5')"></div>
+                        <div class="rectbox" id="box1rectbox4" onclick="chooseColor('box1',4)" onmouseout="clearColor('box1', '4')" onmouseover="put('box1','4')"></div>
+                        <div class="rectbox" id="box1rectbox3" onclick="chooseColor('box1',3)" onmouseout="clearColor('box1', '3')" onmouseover="put('box1','3')"></div>
+                        <div class="rectbox" id="box1rectbox2" onclick="chooseColor('box1',2)" onmouseout="clearColor('box1', '2')" onmouseover="put('box1','2')"></div>
+                        <div class="rectbox" id="box1rectbox1" onclick="chooseColor('box1',1)" onmouseout="clearColor('box1', '1')" onmouseover="put('box1','1')"></div>
+                        <div class="year">20歲未滿</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox5" id="box2rectbox5" onclick="chooseColor('box2',5)" onmouseout="clearColor('box2', '5')" onmouseover="put('box2','5')"></div>
+                        <div class="rectbox4" id="box2rectbox4" onclick="chooseColor('box2',4)" onmouseout="clearColor('box2', '4')" onmouseover="put('box2','4')"></div>
+                        <div class="rectbox3" id="box2rectbox3" onclick="chooseColor('box2',3)" onmouseout="clearColor('box2', '3')" onmouseover="put('box2','3')"></div>
+                        <div class="rectbox2" id="box2rectbox2" onclick="chooseColor('box2',2)" onmouseout="clearColor('box2', '2')" onmouseover="put('box2','2')"></div>
+                        <div class="rectbox1" id="box2rectbox1" onclick="chooseColor('box2',1)" onmouseout="clearColor('box2', '1')" onmouseover="put('box2','1')"></div>
+                        <div class="year">20至30歲未滿</div>
+                    </div>
+                    <div class="box">
+                         <div class="rectbox5" id="box3rectbox5" onclick="chooseColor('box3',5)" onmouseout="clearColor('box3', '5')" onmouseover="put('box3','5')"></div>
+                        <div class="rectbox4"  id="box3rectbox4" onclick="chooseColor('box3',4)" onmouseout="clearColor('box3', '4')" onmouseover="put('box3','4')"></div>
+                        <div class="rectbox3" id="box3rectbox3" onclick="chooseColor('box3',3)" onmouseout="clearColor('box3', '3')" onmouseover="put('box3','3')"></div>
+                        <div class="rectbox2" id="box3rectbox2" onclick="chooseColor('box3',2)" onmouseout="clearColor('box3', '2')" onmouseover="put('box3','2')"></div>
+                        <div class="rectbox1" id="box3rectbox1" onclick="chooseColor('box3',1)" onmouseout="clearColor('box3', '1')" onmouseover="put('box3','1')"></div>
+                        <div class="year">30至40歲未滿</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox5" id="box4rectbox5" onclick="chooseColor('box4',5)" onmouseout="clearColor('box4', '5')" onmouseover="put('box4','5')"></div>
+                        <div class="rectbox4" id="box4rectbox4" onclick="chooseColor('box4',4)" onmouseout="clearColor('box4', '4')" onmouseover="put('box4','4')"></div>
+                        <div class="rectbox3" id="box4rectbox3" onclick="chooseColor('box4',3)" onmouseout="clearColor('box4', '3')" onmouseover="put('box4','3')"></div>
+                        <div class="rectbox2" id="box4rectbox2" onclick="chooseColor('box4',2)" onmouseout="clearColor('box4', '2')" onmouseover="put('box4','2')"></div>
+                        <div class="rectbox1" id="box4rectbox1" onclick="chooseColor('box4',1)" onmouseout="clearColor('box4', '1')" onmouseover="put('box4','1')"></div>
+                        <div class="year">40至50歲未滿</div>
+                    </div>
+                    <div class="box">
+                      <div class="rectbox5" id="box5rectbox5" onclick="chooseColor('box5',5)" onmouseout="clearColor('box5', '5')" onmouseover="put('box5','5')"></div>
+                      <div class="rectbox4" id="box5rectbox4" onclick="chooseColor('box5',4)" onmouseout="clearColor('box5', '4')" onmouseover="put('box5','4')"></div>
+                      <div class="rectbox3" id="box5rectbox3" onclick="chooseColor('box5',3)" onmouseout="clearColor('box5', '3')" onmouseover="put('box5','3')"></div>
+                      <div class="rectbox2" id="box5rectbox2" onclick="chooseColor('box5',2)" onmouseout="clearColor('box5', '2')" onmouseover="put('box5','2')"></div>
+                      <div class="rectbox1" id="box5rectbox1" onclick="chooseColor('box5',1)" onmouseout="clearColor('box5', '1')" onmouseover="put('box5','1')"></div>
+                      <div class="year">50至60歲未滿</div>
+                    </div>
+                    <div class="box">
+                      <div class="rectbox5" id="box6rectbox5" onclick="chooseColor('box6',5)" onmouseout="clearColor('box6', '5')" onmouseover="put('box6','5')"></div>
+                      <div class="rectbox4" id="box6rectbox4" onclick="chooseColor('box6',4)" onmouseout="clearColor('box6', '4')" onmouseover="put('box6','4')"></div>
+                      <div class="rectbox3" id="box6rectbox3" onclick="chooseColor('box6',3)" onmouseout="clearColor('box6', '3')" onmouseover="put('box6','3')"></div>
+                      <div class="rectbox2" id="box6rectbox2" onclick="chooseColor('box6',2)" onmouseout="clearColor('box6', '2')" onmouseover="put('box6','2')"></div>
+                      <div class="rectbox1" id="box6rectbox1" onclick="chooseColor('box6',1)" onmouseout="clearColor('box6', '1')" onmouseover="put('box6','1')"></div>
+                      <div class="year">60歲以上</div>
+                    </div>
+                  </div>
+                  <div class="girl" style="display: none;">
+                    <div class="box">
+                        <div class="rectnum">40%~50%</div>
+                        <div class="rectnum">30%~40%</div>
+                        <div class="rectnum">20%~30%</div>
+                        <div class="rectnum">10%~20%</div>
+                        <div class="rectnum">0%~10%</div>
+                        <div class="rectnum">比率</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox" id="gox1rectgox5" onclick="chooseColor('gox1',5)" onmouseout="clearColor('gox1', '5')" onmouseover="put('gox1','5')"></div>
+                        <div class="rectbox" id="gox1rectgox4" onclick="chooseColor('gox1',4)" onmouseout="clearColor('gox1', '4')" onmouseover="put('gox1','4')"></div>
+                        <div class="rectbox" id="gox1rectgox3" onclick="chooseColor('gox1',3)" onmouseout="clearColor('gox1', '3')" onmouseover="put('gox1','3')"></div>
+                        <div class="rectbox" id="gox1rectgox2" onclick="chooseColor('gox1',2)" onmouseout="clearColor('gox1', '2')" onmouseover="put('gox1','2')"></div>
+                        <div class="rectbox" id="gox1rectgox1" onclick="chooseColor('gox1',1)" onmouseout="clearColor('gox1', '1')" onmouseover="put('gox1','1')"></div>
+                        <div class="year">20歲未滿</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox" id="gox2rectgox5" onclick="chooseColor('gox2',5)" onmouseout="clearColor('gox2', '5')" onmouseover="put('gox2','5')"></div>
+                        <div class="rectbox" id="gox2rectgox4" onclick="chooseColor('gox2',4)" onmouseout="clearColor('gox2', '4')" onmouseover="put('gox2','4')"></div>
+                        <div class="rectbox" id="gox2rectgox3" onclick="chooseColor('gox2',3)" onmouseout="clearColor('gox2', '3')" onmouseover="put('gox2','3')"></div>
+                        <div class="rectbox" id="gox2rectgox2" onclick="chooseColor('gox2',2)" onmouseout="clearColor('gox2', '2')" onmouseover="put('gox2','2')"></div>
+                        <div class="rectbox" id="gox2rectgox1" onclick="chooseColor('gox2',1)" onmouseout="clearColor('gox2', '1')" onmouseover="put('gox2','1')"></div>
+                        <div class="year">20至30歲未滿</div>
+                    </div>
+                    <div class="box">
+                         <div class="rectbox" id="gox3rectgox5" onclick="chooseColor('gox3',5)" onmouseout="clearColor('gox3', '5')" onmouseover="put('gox3','5')"></div>
+                        <div class="rectbox"  id="gox3rectgox4" onclick="chooseColor('gox3',4)" onmouseout="clearColor('gox3', '4')" onmouseover="put('gox3','4')"></div>
+                        <div class="rectbox" id="gox3rectgox3" onclick="chooseColor('gox3',3)" onmouseout="clearColor('gox3', '3')" onmouseover="put('gox3','3')"></div>
+                        <div class="rectbox" id="gox3rectgox2" onclick="chooseColor('gox3',2)" onmouseout="clearColor('gox3', '2')" onmouseover="put('gox3','2')"></div>
+                        <div class="rectbox" id="gox3rectgox1" onclick="chooseColor('gox3',1)" onmouseout="clearColor('gox3', '1')" onmouseover="put('gox3','1')"></div>
+                        <div class="year">30至40歲未滿</div>
+                    </div>
+                    <div class="box">
+                        <div class="rectbox" id="gox4rectgox5" onclick="chooseColor('gox4',5)" onmouseout="clearColor('gox4', '5')" onmouseover="put('gox4','5')"></div>
+                        <div class="rectbox" id="gox4rectgox4" onclick="chooseColor('gox4',4)" onmouseout="clearColor('gox4', '4')" onmouseover="put('gox4','4')"></div>
+                        <div class="rectbox" id="gox4rectgox3" onclick="chooseColor('gox4',3)" onmouseout="clearColor('gox4', '3')" onmouseover="put('gox4','3')"></div>
+                        <div class="rectbox" id="gox4rectgox2" onclick="chooseColor('gox4',2)" onmouseout="clearColor('gox4', '2')" onmouseover="put('gox4','2')"></div>
+                        <div class="rectbox" id="gox4rectgox1" onclick="chooseColor('gox4',1)" onmouseout="clearColor('gox4', '1')" onmouseover="put('gox4','1')"></div>
+                        <div class="year">40至50歲未滿</div>
+                    </div>
+                    <div class="box">
+                      <div class="rectbox" id="gox5rectgox5" onclick="chooseColor('gox5',5)" onmouseout="clearColor('gox5', '5')" onmouseover="put('gox5','5')"></div>
+                      <div class="rectbox" id="gox5rectgox4" onclick="chooseColor('gox5',4)" onmouseout="clearColor('gox5', '4')" onmouseover="put('gox5','4')"></div>
+                      <div class="rectbox" id="gox5rectgox3" onclick="chooseColor('gox5',3)" onmouseout="clearColor('gox5', '3')" onmouseover="put('gox5','3')"></div>
+                      <div class="rectbox" id="gox5rectgox2" onclick="chooseColor('gox5',2)" onmouseout="clearColor('gox5', '2')" onmouseover="put('gox5','2')"></div>
+                      <div class="rectbox" id="gox5rectgox1" onclick="chooseColor('gox5',1)" onmouseout="clearColor('box5', '1')" onmouseover="put('box5','1')"></div>
+                      <div class="year">50至60歲未滿</div>
+                    </div>
+                    <div class="box">
+                      <div class="rectbox" id="gox6rectgox5" onclick="chooseColor('gox6',5)" onmouseout="clearColor('gox6', '5')" onmouseover="put('gox6','5')"></div>
+                      <div class="rectbox" id="gox6rectgox4" onclick="chooseColor('gox6',4)" onmouseout="clearColor('gox6', '4')" onmouseover="put('gox6','4')"></div>
+                      <div class="rectbox" id="gox6rectgox3" onclick="chooseColor('gox6',3)" onmouseout="clearColor('gox6', '3')" onmouseover="put('gox6','3')"></div>
+                      <div class="rectbox" id="gox6rectgox2" onclick="chooseColor('gox6',2)" onmouseout="clearColor('gox6', '2')" onmouseover="put('gox6','2')"></div>
+                      <div class="rectbox" id="gox6rectgox1" onclick="chooseColor('gox6',1)" onmouseout="clearColor('gox6', '1')" onmouseover="put('gox6','1')"></div>
+                      <div class="year">60歲以上</div>
+                    </div>
+                  </div>
+                    <div class="btn">
+                    </div>
+                </div>
+                <div class="static-title" style="display:none; ">108年統計結果</div>
+                <canvas id="myChart" style="display:none; " width="400" height="200"></canvas>
+            </div>
+
+            <div class="btn" id="btn">
+                <!-- <div class="rest" id="rest" onclick="rest()">重新設定</div> -->
+                <div class="send" id="next" onclick="next()">下一步</div>
+                <div class="send" id="send" onclick="send()" style="display: none;">看統計結果</div>
+            </div>
+            <a href="./section5.html" class="next">最後一關</a>
+        </div>
+    </div>
+
+    <script>
+        var str = '你覺得大多集中在哪個年齡層？<sapn style="color: yellow">(依性別拉每個年齡層百分比並看結果)</span>';
+        // var str = '1';
+        var i = 0;
+
+        function typing() {
+            var divTyping = document.getElementById('typing1');
+            if (i <= str.length) {
+                divTyping.innerHTML = str.slice(0, i++) + '_';
+                setTimeout('typing()', 90); //遞歸調用
+            } else {
+                divTyping.innerHTML = str; //結束打字,移除 _ 光標  
+                document.querySelector('.guess').setAttribute("style", "display: flex");
+                document.querySelector('#btn').setAttribute("style", "display: flex");
+                document.querySelector('a.next').setAttribute("style", "display: block");
+            }
+        }
+        typing();
+
+        function put(boxtype, num) {
+                boxstr = "#" + boxtype + "rect" + boxtype.substr(0, 3) + num.toString()
+                // console.log(boxstr);
+                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
+        }
+
+        function clearColor(boxtype,num) {
+                boxstr = "#" + boxtype + "rect" + boxtype.substr(0, 3) + num.toString()
+                document.querySelector(boxstr).removeAttribute("style", "background-color: yellow;");
+        }
+
+        function chooseColor(boxtype, num) {
+                boxstr = "#" + boxtype + "rect" + boxtype.substr(0, 3) + num.toString()
+                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
+                document.querySelector(boxstr).onmouseout = function() {
+                    // alert();
+                };
+                document.querySelector(boxstr).onmouseover = function() {
+
+                };
+            for (i = 1; i <= 5; i++) {
+                boxstr = "#" + boxtype + "rect" + boxtype.substr(0, 3) + i.toString()
+                document.querySelector(boxstr).setAttribute('cursor', 'none');
+                document.querySelector(boxstr).onmouseout = function() {
+                    // alert();
+                };
+                document.querySelector(boxstr).onmouseover = function() {
+
+                };
+                document.querySelector(boxstr).onclick = function() {
+};
+            }
+        }
+
+        function next(){
+          document.querySelector('#next').setAttribute("style", "display: none");
+          document.querySelector('#send').removeAttribute("style", "display: block");
+          document.querySelector('#sex').textContent = '女性'
+          document.querySelector('.boy').setAttribute("style", "display: none");
+          document.querySelector('.girl').removeAttribute("style", "display: block");  
+        }
+
+        function send(){
+            document.querySelector('.guess').setAttribute("style", "display: none");
+            document.querySelector('.boy').setAttribute("style", "display: none");
+             document.querySelector('.girl').setAttribute("style", "display: none");
+            document.querySelector('#btn').setAttribute("style", "display: none");
+            document.querySelector('.static-title').removeAttribute("style", "display: block");  
+            document.querySelector("#myChart").setAttribute("style", "display:block;width:670px;background-color: #fff;");
+            // document.querySelector('#sex').textContent = '108年統計結果'
+        }
+
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["20歲未滿", "20至30歲未滿", "30至40歲未滿", "40至50歲未滿", "50至60歲未滿", "60歲以上"],
+        datasets: [{
+            label: '女性',
+            data: [2.3, 16.1, 25.4, 28.3, 20.9, 7.2],
+            fill: false,
+            backgroundColor: 'rgba(255, 99, 132, 1)',
+            borderColor: 'rgba(255, 99, 132, 1)'
+        }, 
+        {
+            label: '男性',
+            data: [1.0, 10.8, 20.8, 30.5, 25.7, 11.1],
+            fill: false,
+            backgroundColor: 'rgba(54, 162, 235, 1)',			
+            borderColor: 'rgba(54, 162, 235, 1)'
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+    
+    </script>
+
+</body>
+
+</html>

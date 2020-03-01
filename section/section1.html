@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/section.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>情境體驗(一)</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="little-container">
+            <div class="title">情境體驗(一)</div>
+            <div id="typing1"> </div>
+            <div class="chart" id="chart" style="display: none;">
+                <div class='tableauPlaceholder' id='viz1583039834448' style='position: relative'>
+                    <noscript>
+                        <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CM&#47;CMW59842B&#47;1_rss.png' style='border: none' /></a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='path' value='shared&#47;CMW59842B' />
+                        <param name='toolbar' value='no' />
+                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CM&#47;CMW59842B&#47;1.png' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='showShareOptions' value='false' />
+                        <param name='tabs' value='false' />
+                    </object>
+                </div>
+            </div>
+            <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a>
+        </div>
+    </div>
+
+    <script>
+        var str = '法務部所屬檢察機關104年至108年辦理酒駕案件偵查終結有七成被起訴，猜猜看，<span style="color: yellow">「一般酒駕」</span>與<span style="color: yellow">「酒駕致死或致重傷」</span>的案件起訴人數及占比為何？<span style="color: yellow">(可點選框框之犯罪類型)</span>';
+        var i = 0;
+
+        function typing() {
+            var divTyping = document.getElementById('typing1');
+            if (i <= str.length) {
+                divTyping.innerHTML = str.slice(0, i++) + '_';
+                setTimeout('typing()', 100); //遞歸調用
+            } else {
+                divTyping.innerHTML = str; //結束打字,移除 _ 光標
+                document.getElementById('chart').setAttribute('style', 'display:block');
+                document.getElementById('next').setAttribute('style', 'display:block');
+
+            }
+        }
+        typing();
+    </script>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1583039834448');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '600px';
+            vizElement.style.height = '400px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '600px';
+            vizElement.style.height = '400px';
+        } else {
+            vizElement.style.width = '600px';
+            vizElement.style.height = '400px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+
+</html>

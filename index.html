@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <title>統計情境體驗遊戲</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title"></div>
+        <div class="little-container main-index" id="main-box">
+            <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>要付出什麼代價嗎？</div>
+            <div class="start  animated bounce  slow" id="button" onclick="showGame()">按此了解內容</div>
+            <div class="unit">法務統計小學堂</div>
+        </div>
+        <div class="little-container" style="display: none;" id="game-box">
+            <div class="people"></div>
+            <div class="inner-container">
+                <div class="notes">
+                    <div class="question">
+                        <div id="typing1"> </div>
+                    </div>
+                    <div class="commentbox animated fadeIn" id="commentbox">
+                        <div class="linner-title">你覺得會付出什麼代價</div>
+                        <div class="section">
+                            <a href="#"><div class="box1" id="box1" onmousemove="move('box1');" onmouseout="out('box1')">觀看影片</div></a>
+                            <a href="./section/section1.html"><div class="box2" id="box2" onmousemove="move('box2');" onmouseout="out('box2')">情境體驗</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var str = '「喝酒不開車，開車不喝酒！」這句老生常談，大家都耳熟能詳，但卻不是人人都能做到。酒後駕車上路，不只危害自己的性命，更可能波及無辜他人，造成無法挽回的悲劇，這恣意妄為的結果，是要付出相當代價的。';
+        var i = 0;
+
+        function typing() {
+            var divTyping = document.getElementById('typing1');
+            if (i <= str.length) {
+                divTyping.innerHTML = str.slice(0, i++) + '_';
+                setTimeout('typing()', 100); //遞歸調用
+            } else {
+                divTyping.innerHTML = str; //結束打字,移除 _ 光標
+                divTyping.setAttribute("style", "border-bottom: 1px solid #ffffff;");
+                var commentbox = document.querySelector("#commentbox");
+                // console.log(commentbox);
+                commentbox.setAttribute("style", "display:block");
+            }
+        }
+
+        function move(boxstr){
+            str = "#" + boxstr
+            var box = document.querySelector(str);
+            box.setAttribute("class", boxstr + " animated swing");
+        }
+
+        function out(boxstr){
+            str = "#" + boxstr
+            var box = document.querySelector(str);
+            box.setAttribute("class", boxstr);         
+        }
+
+        function showGame(){
+            var mainBox = document.querySelector("#main-box");
+            var gameBox = document.querySelector("#game-box");
+
+            mainBox.setAttribute("style", "display: none");
+            gameBox.setAttribute("style", "display: flex");
+            typing();
+        }
+
+    </script>
+</body>
+
+</html>
