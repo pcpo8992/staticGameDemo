@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1366 799.94" style="enable-background:new 0 0 1366 799.94;" xml:space="preserve">
+	 viewBox="0 0 1366 799.9" style="enable-background:new 0 0 1366 799.9;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#A9815B;}
 	.st1{fill:#0C3133;}
 	.st2{fill:#F6F078;}
 	.st3{fill:#FFFFFF;}
-	.st4{fill:#D3D3D3;}
+	.st4{fill:#CBE4E3;}
 </style>
 <g>
-	<path class="st0" d="M1289.27,758.94H81.73c-26.36,0-47.73-21.37-47.73-47.73V95.67c0-26.36,21.37-47.73,47.73-47.73h1207.53
-		c26.36,0,47.73,21.37,47.73,47.73V711.2C1337,737.57,1315.63,758.94,1289.27,758.94z"/>
+	<path class="st0" d="M1289.3,758.9H81.7c-26.4,0-47.7-21.4-47.7-47.7V95.7c0-26.4,21.4-47.7,47.7-47.7h1207.5
+		c26.4,0,47.7,21.4,47.7,47.7v615.5C1337,737.6,1315.6,758.9,1289.3,758.9z"/>
 </g>
 <g>
-	<rect x="77" y="82.94" class="st1" width="1223" height="648"/>
+	<rect x="77" y="82.9" class="st1" width="1223" height="648"/>
 </g>
-<path class="st0" d="M1339.27,771.94H32.73C18.52,771.94,7,760.42,7,746.21v-28.27h1358v28.27
-	C1365,760.42,1353.48,771.94,1339.27,771.94z"/>
-<rect x="1027" y="702.94" class="st2" width="63" height="14"/>
-<rect x="1125" y="702.94" class="st3" width="63" height="14"/>
-<path class="st4" d="M529.82,14.4l332,0c26.52,0,48.01,21.49,48.01,48.01v20.54H482.1c-0.16,0-0.29-0.13-0.29-0.29V62.41
-	C481.81,35.89,503.3,14.4,529.82,14.4z"/>
+<path class="st0" d="M1339.3,771.9H32.7C18.5,771.9,7,760.4,7,746.2v-28.3h1358v28.3C1365,760.4,1353.5,771.9,1339.3,771.9z"/>
+<rect x="1027" y="702.9" class="st2" width="63" height="14"/>
+<rect x="1125" y="702.9" class="st3" width="63" height="14"/>
+<path class="st4" d="M529.8,14.4h332c26.5,0,48,21.5,48,48v20.5H482.1c-0.2,0-0.3-0.1-0.3-0.3V62.4
+	C481.8,35.9,503.3,14.4,529.8,14.4z"/>
 </svg>

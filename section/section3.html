@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/section.css">
-    <title>情境體驗(三)</title>
+    <link rel="stylesheet" href="../css/section3.css">
+    <title>特徵通-性別</title>
 </head>
 <body>
-    <div class="container">
-    <div class="little-container">
-        <div class="title">情境體驗(三)</div>
-        <div id="typing1"> </div>
-        <div class="libra" id="libra">
-          <div class="people">          
-            <div class="boy" id="boy" onclick="judge('boy')"></div>
-           <div class="girl" id="girl" onclick="judge('girl')"></div>
+<div class="container">
+  <div class="little-container">
+      <div class="title">特徵通-性別</div>
+      <div class="question1">
+          <div class="left"><img src="../image/lin2.png" alt=""></div>
+          <div class="right" id="main">
+              <div class="upper" id="typing1"></div>
+              <div class="middle" id ="middle" style="display: none;"></div>
+              <div class="down" id ="question1" style="display: none;">
+                  <div class="libra" id="libra">
+                     <div class="people">          
+                        <div class="boy" id="boy" onclick="judge('boy')"></div>
+                        <div class="girl" id="girl" onclick="judge('girl')"></div>
+                      </div>
+                    <div class="bridge" id="bridge"><div class="sendbtn" id="sendbtn" onclick="send()">送出</div></div>
+                </div>
+                
           </div>
-
-          <div class="bridge" id="bridge"><div class="sendbtn" id="sendbtn" onclick="send()">送出</div></div>
+          <a href="section4.html"><div class=" nextgame" style="display:none" >下一關</div></a>
+          <div class="modal" style="display: none;" id="fault">
+            <div class="modal-content">
+                <span class="close" id="faultclose">&times;</span>
+                <p class="fault"><i class="fas fa-times"></i>      答錯囉</p>
+                <div onclick="showAnswer()">看解答</div>
+              </div>
         </div>
-        <a href="./section4.html" class="next" id="next" style="display: none;">下一關</a>
-    </div>
+        <div class="modal" style="display: none;" id="right">
+            <div class="modal-content">
+                <span class="close" id="rightclose">&times;</span>
+                <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
+                <div onclick="showAnswer()">看解答</div>
+              </div>
+        </div>
+      </div>
+  </div>
 </div>
 
 <script>
-        var str = '地檢署108年執行酒駕案件裁判確定有罪人數，你認為男性多？還是女性多？<sapn style="color: yellow">(先點選性別，再送出)</span>';
+        var str = '那你猜猜，這些被判有罪的人中，男性多還是女性多？';
         var i = 0;
           // var str = 1
         function typing() {
@@ -34,8 +55,7 @@
                 setTimeout('typing()', 80); //遞歸調用
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標   
-                document.getElementById('libra').setAttribute('style', 'display:block');   
-                document.getElementById('next').setAttribute('style', 'display:block'); 
+                document.querySelector('#question1').setAttribute('style', 'display:flex');   
             }
         }
         typing();
@@ -71,7 +91,36 @@
             boy.classList.remove("circle");
             girl.classList.remove("circle");
             send.setAttribute("style", "display:none");
+            document.querySelector(".nextgame").setAttribute("style", "display:block");
+            
           }
+        }
+
+        // Get the <span> element that closes the modal
+          var rightclose = document.getElementById("rightclose");
+        var faultclose = document.getElementById("faultclose");
+
+        // When the user clicks on the button, open the modal
+
+        // When the user clicks on <span> (x), close the modal
+        rightclose.onclick = function() {
+             var modal = document.getElementById("right");
+             modal.style.display = "none";
+        };
+        faultclose.onclick = function() {
+             var modal = document.getElementById("fault");
+             modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            var right = document.getElementById("right");
+            var fault = document.getElementById("fault");
+            if (event.target == right) {
+                right.style.display = "none";
+            }
+            if (event.target == fault) {
+                fault.style.display = "none";
+            }
         }
 
 </script>

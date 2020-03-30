@@ -68,14 +68,15 @@ body {
     /* width: 50px; */
     /* border: 1px solid red; */
     display: flex;
-    /* justify-content: end; */
+    /* justify-content: center; */
+    align-items: center;
     flex-flow: column;
 }
 
 #main .upper {
     /* border: 1px solid red; */
     width: 100%;
-    height: 200px;
+    height: 280px;
     /* line-height: 280px; */
     color:black;
     font-size: 2em;
@@ -84,116 +85,105 @@ body {
 
 #main .middle{
     width: 100%;
-    /* border: 1px solid red; */
-    height: 250px;
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
-
-}
-
-.middle img{
-    width: 150px;
 }
 
 #main .down {
     /* border: 1px solid red; */
     width: 100%;
-    /* height: 200px; */
+    height: 400px;
     color:black;
     display: flex;
     flex-grow: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
 
 }
 
-.name{
-    width: 200px;
-    height: 150px;
-    line-height: 150px;
-    text-align: center;
-    font-size: 1.5em;
+.libra {
+    /* margin-top: -50px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.people {
+    display: flex;
+    flex-direction: row;
+    width: 580px;
+    /* width: 800px; */
     /* border: 1px solid red; */
+    /* justify-content: space-around; */
 }
 
-.answer{
+.boy {
     width: 150px;
-    height: 110px;
-    border: 1px dashed blue;
+    height: 150px;
+    /* border: 1px solid red; */
+    background-size: cover;
+    background-image: url("../svg/boy.svg");
+    margin-left: -10px;
+    cursor: pointer;
 }
 
-.btn, .nextbtn{
+.boy:hover,
+.girl:hover {
+    border: 2px solid black;
+    border-radius: 99em;
+}
+
+.circle {
+    border: 2px solid black;
+    border-radius: 99em;
+}
+
+.girl {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    /* border: 1px solid red; */
+    background-size: cover;
+    background-image: url("../svg/woman.svg");
+    margin-left: 340px;
+}
+
+.bridge {
+    width: 580px;
+    height: 150px;
+    /* border: 1px solid red; */
+    background-size: contain;
+    background-image: url("../svg/bridge.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform:rotate(5deg);
+    animation-duration: 2s; */
+}
+
+.bridge .sendbtn {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 1.4em;
+    color: black;
+    margin-top: 40px;
+}
+
+.bridge .sendbtn:hover {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.nextgame{
     width: 100px;
     height: 50px;
-    border: 1px solid blue;
-    border-radius: 10px;
-    font-size: 1.5em;
-    margin-left: 40px;
     line-height: 50px;
     text-align: center;
+    border: 1px solid red;
     cursor: pointer;
-    display: none;
 }
-
-.btn :hover{
-    background-color: blue;
-    color: white;
-    font-size: 2em;
-}
-
-.question1 a{
-    text-decoration: none;
-    color: black;
-}
-
-.question1 a:hover{
-    text-decoration: none;
-    color: black;
-}
-
-.modal{
-    /* display: none; Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-    text-align: center;
-  }
-
-  .modal-content .fault{
-      font-size: 4em;
-      color:red;
-  }
-
-  .modal-content .right{
-    font-size: 4em;
-    color:blue;
-}
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }

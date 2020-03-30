@@ -5,243 +5,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/section5.css">
-    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <title>情境體驗(五)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <title>刑度通</title>
 </head>
 
 <body>
     <div class="container">
         <div class="little-container">
-            <div class="title">情境體驗(五)</div>
-            <div id="typing1"> </div>
-            <div class="rect">
-                <div class="guess">
-                  <div class="boy">
-                    <div class="box">
-                       <div class="year">5年以上</div>
-                        
-                        
-                        
-                        
-                        
-                        <div class="rectbox" id="box1rectbox1" onclick="chooseColor('box1',1)" onmouseout="clearColor('box1', '1')" onmouseover="put('box1','1')"></div>
-                        <div class="rectbox" id="box1rectbox2" onclick="chooseColor('box1',2)" onmouseout="clearColor('box1', '2')" onmouseover="put('box1','2')"></div>
-                        <div class="rectbox" id="box1rectbox3" onclick="chooseColor('box1',3)" onmouseout="clearColor('box1', '3')" onmouseover="put('box1','3')"></div>
-                        <div class="rectbox" id="box1rectbox4" onclick="chooseColor('box1',4)" onmouseout="clearColor('box1', '4')" onmouseover="put('box1','4')"></div>
-                        <div class="rectbox" id="box1rectbox5" onclick="chooseColor('box1',5)" onmouseout="clearColor('box1', '5')" onmouseover="put('box1','5')"></div>
-                        <div class="rectbox" id="box1rectbox6" onclick="chooseColor('box1',6)" onmouseout="clearColor('box1', '6')" onmouseover="put('box1','6')"></div>
+            <div class="title">刑度通</div>
+            <div class="question1">
+                <div class="left"><img src="../image/lin2.png" alt=""></div>
+                <div class="right" id="main">
+                    <div class="upper" id="typing1"></div>
+                    <div class="middle" id ="middle" >
+                        <img src="../image/Detentionfinesandexemptions.svg"  id="1" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
+                        <img src="../image/BelowJune.svg"  id=2" draggable="true" ondragstart="drag(event)"  alt="20to30years">
+                        <img src="../image/MorethanJunetolessthan1year.svg"  id="3" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
+                        <img src="../image/1to2.svg"  id=4" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
+                        <img src="../image/2to5.svg"  id="5" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
+                        <img src="../image/over5years.svg"  id="6" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
                     </div>
-                    <div class="box">
-                      <div class="year">2年-5年未滿</div>
-                 
-                        <div class="rectbox1" id="box2rectbox1" onclick="chooseColor('box2',1)" onmouseout="clearColor('box2', '1')" onmouseover="put('box2','1')"></div>  
-                      
-                        <div class="rectbox2" id="box2rectbox2" onclick="chooseColor('box2',2)" onmouseout="clearColor('box2', '2')" onmouseover="put('box2','2')"></div>
-                        
-                        <div class="rectbox3" id="box2rectbox3" onclick="chooseColor('box2',3)" onmouseout="clearColor('box2', '3')" onmouseover="put('box2','3')"></div>
-                        
-                        <div class="rectbox4" id="box2rectbox4" onclick="chooseColor('box2',4)" onmouseout="clearColor('box2', '4')" onmouseover="put('box2','4')"></div>
-                        
-                        <div class="rectbox5" id="box2rectbox5" onclick="chooseColor('box2',5)" onmouseout="clearColor('box2', '5')" onmouseover="put('box2','5')"></div>
-                        <div class="rectbox6" id="box2rectbox6" onclick="chooseColor('box2',6)" onmouseout="clearColor('box2', '6')" onmouseover="put('box2','6')"></div>
+                    <div class="down" id ="question1" >
+                        <div class="first">
+                            <div class="name">一般酒駕:</div>
+                            <div class="answer-box" id ="first">
+                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-4" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-5" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-6" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="name">酒駕致死或致重傷:</div>
+                            <div class="answer-box" id="second">
+                            <div class="answer" id="second-1" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                            <div class="answer" id="second-2" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                            <div class="answer" id="second-3" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                            <div class="answer" id="second-4" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                            <div class="answer" id="second-5" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                            <div class="answer" id="second-6" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                        </div>
+                        </div>                  
                     </div>
-                    <div class="box">
-                      <div class="year">1年-2年未滿</div>
-                     
-                        <div class="rectbox1" id="box3rectbox1" onclick="chooseColor('box3',1)" onmouseout="clearColor('box3', '1')" onmouseover="put('box3','1')"></div>
-                        
-                       <div class="rectbox2" id="box3rectbox2" onclick="chooseColor('box3',2)" onmouseout="clearColor('box3', '2')" onmouseover="put('box3','2')"></div>
-                    
-                       <div class="rectbox3" id="box3rectbox3" onclick="chooseColor('box3',3)" onmouseout="clearColor('box3', '3')" onmouseover="put('box3','3')"></div>
-                   
-                      <div class="rectbox4"  id="box3rectbox4" onclick="chooseColor('box3',4)" onmouseout="clearColor('box3', '4')" onmouseover="put('box3','4')"></div>
-                      
-                      <div class="rectbox5" id="box3rectbox5" onclick="chooseColor('box3',5)" onmouseout="clearColor('box3', '5')" onmouseover="put('box3','5')"></div>
-                      <div class="rectbox6" id="box3rectbox6" onclick="chooseColor('box3',6)" onmouseout="clearColor('box3', '6')" onmouseover="put('box3','6')"></div>
-                     
-                    </div>
-                    <div class="box">
-                      <div class="year">逾6月-1年未滿</div>
-                    
-                        <div class="rectbox1" id="box4rectbox1" onclick="chooseColor('box4',1)" onmouseout="clearColor('box4', '1')" onmouseover="put('box4','1')"></div>
-                       
-                        <div class="rectbox2" id="box4rectbox2" onclick="chooseColor('box4',2)" onmouseout="clearColor('box4', '2')" onmouseover="put('box4','2')"></div>
-                       
-                        <div class="rectbox3" id="box4rectbox3" onclick="chooseColor('box4',3)" onmouseout="clearColor('box4', '3')" onmouseover="put('box4','3')"></div>
-                        
-                        <div class="rectbox4" id="box4rectbox4" onclick="chooseColor('box4',4)" onmouseout="clearColor('box4', '4')" onmouseover="put('box4','4')"></div>
-                   
-                        <div class="rectbox5" id="box4rectbox5" onclick="chooseColor('box4',5)" onmouseout="clearColor('box4', '5')" onmouseover="put('box4','5')"></div>
-                        <div class="rectbox6" id="box4rectbox6" onclick="chooseColor('box4',6)" onmouseout="clearColor('box4', '6')" onmouseover="put('box4','6')"></div>
-                    </div>
-                    <div class="box">
-                      <div class="year">6月以下</div>
-                 
-                      <div class="rectbox1" id="box5rectbox1" onclick="chooseColor('box5',1)" onmouseout="clearColor('box5', '1')" onmouseover="put('box5','1')"></div>
-                      
-                      <div class="rectbox2" id="box5rectbox2" onclick="chooseColor('box5',2)" onmouseout="clearColor('box5', '2')" onmouseover="put('box5','2')"></div>
-                     
-                      <div class="rectbox3" id="box5rectbox3" onclick="chooseColor('box5',3)" onmouseout="clearColor('box5', '3')" onmouseover="put('box5','3')"></div>
-                    
-                      <div class="rectbox4" id="box5rectbox4" onclick="chooseColor('box5',4)" onmouseout="clearColor('box5', '4')" onmouseover="put('box5','4')"></div>
-                    
-                      <div class="rectbox5" id="box5rectbox5" onclick="chooseColor('box5',5)" onmouseout="clearColor('box5', '5')" onmouseover="put('box5','5')"></div>
-                      <div class="rectbox6" id="box5rectbox6" onclick="chooseColor('box5',6)" onmouseout="clearColor('box5', '6')" onmouseover="put('box5','6')"></div>
-                    </div>
-                    <div class="box">
-                      <div class="year">拘役 罰金及免刑</div>
-                   
-                      <div class="rectbox1" id="box6rectbox1" onclick="chooseColor('box6',1)" onmouseout="clearColor('box6', '1')" onmouseover="put('box6','1')"></div>
-                     
-                      <div class="rectbox2" id="box6rectbox2" onclick="chooseColor('box6',2)" onmouseout="clearColor('box6', '2')" onmouseover="put('box6','2')"></div>
-                   
-                      <div class="rectbox3" id="box6rectbox3" onclick="chooseColor('box6',3)" onmouseout="clearColor('box6', '3')" onmouseover="put('box6','3')"></div>
-                    
-                      <div class="rectbox4" id="box6rectbox4" onclick="chooseColor('box6',4)" onmouseout="clearColor('box6', '4')" onmouseover="put('box6','4')"></div>
-               
-                      <div class="rectbox5" id="box6rectbox5" onclick="chooseColor('box6',5)" onmouseout="clearColor('box6', '5')" onmouseover="put('box6','5')"></div>
-                      <div class="rectbox6" id="box6rectbox6" onclick="chooseColor('box6',6)" onmouseout="clearColor('box6', '6')" onmouseover="put('box6','6')"></div>
-                    </div>
-                    <div class="box">
-                      <div class="year" style="text-align: right;">人數</div>
-                      <div class="rectnum">0-10000</div>
-                      <div class="rectnum">10000-20000</div>
-                      <div class="rectnum">20000-30000</div>
-                      <div class="rectnum">30000-40000</div>
-                      <div class="rectnum">40000-50000</div>
-                      <div class="rectnum">50000-60000</div>
-                  </div>
-                  </div>
-                    <div class="btn">
+                    <div class="send">
+                        <div class="btn" onclick="show()">送出</div>
+                        <!-- <a href=""><div class="nextbtn">下一關</div></a> -->
                     </div>
                 </div>
-                <div class="static-title" style="display:none; ">108年統計結果</div>
-                <canvas id="myChart" style="display:none; " width="400" height="200"></canvas>
             </div>
-
-            <div class="btn" id="btn">
-              <div class="rest" id="rest" onclick="rest()">重新設定</div>
-              <div class="send" id="send" onclick="send()">看統計結果</div>
+            <div class="modal" style="display: none;" id="fault">
+                <div class="modal-content">
+                    <span class="close" id="faultclose">&times;</span>
+                    <p class="fault"><i class="fas fa-times"></i>      答錯囉</p>
+                    <div>看解答</div>
+                  </div>
             </div>
-            <a href="../index.html" class="next">回首頁</a>
+            <div class="modal" style="display: none;" id="right">
+                <div class="modal-content">
+                    <span class="close" id="rightclose">&times;</span>
+                    <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
+                    <div>看解答</div>
+                  </div>
+            </div>
+            <!-- <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a> -->
         </div>
     </div>
 
     <script>
-        var str = '酒駕修法後，提高酒駕致死、致重傷刑度，並刪除拘役及單獨科罰金刑，但是你知道這些判決有罪的人到底被判了什麼樣的刑度嗎？<sapn style="color: yellow">(可拉每個刑期人數，再看結果)</span>';
-        // var str = '1';
+        var str = '你覺得會判刑多重？<br>(請將年齡拖曳至下方區塊)';
+        // var str = '1'
         var i = 0;
 
         function typing() {
             var divTyping = document.getElementById('typing1');
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 90); //遞歸調用
+                setTimeout('typing()', 100); //遞歸調用
             } else {
-                divTyping.innerHTML = str; //結束打字,移除 _ 光標  
-                document.querySelector('.guess').setAttribute("style", "display: flex");
-                document.querySelector('#btn').setAttribute("style", "display: flex");
-                document.querySelector('a.next').setAttribute("style", "display: block");
+                divTyping.innerHTML = str; //結束打字,移除 _ 光標
+                // document.getElementById('next').setAttribute('style', 'display:block');
+                // document.getElementById("question1").setAttribute('style', 'display:flex');
+                // document.getElementById("middle").setAttribute('style', 'display:block');
             }
         }
+
+        // Get the <span> element that closes the modal
+        var rightclose = document.getElementById("rightclose");
+        var faultclose = document.getElementById("faultclose");
+
+        // When the user clicks on the button, open the modal
+
+        // When the user clicks on <span> (x), close the modal
+        rightclose.onclick = function() {
+             var modal = document.getElementById("right");
+             modal.style.display = "none";
+        };
+        faultclose.onclick = function() {
+             var modal = document.getElementById("fault");
+             modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            var right = document.getElementById("right");
+            var fault = document.getElementById("fault");
+            if (event.target == right) {
+                right.style.display = "none";
+            }
+            if (event.target == fault) {
+                fault.style.display = "none";
+            }
+        }
+
+        function show(){
+           var rightAnswer = {
+               'firstSection':[1 ,4, 5],
+               'secondSection':[2 ,3, 6]
+           };
+           var guessAnswer = {
+               'firstSection':[],
+               'secondSection':[],
+           };
+
+        //    var firstBox = document.querySelector("#first").children;
+        //    for(var i = 0; i <= 5; i++){
+        //        if(firstBox[i].firstElementChild !== null){
+        //             var id = firstBox[i].firstElementChild.id;
+        //             guessAnswer['firstSection'].push(id);
+        //        }
+        //    }
+        //    guessAnswer['firstSection'].sort();
+
+        guessAnswer['firstSection'] = findCorrectSolution('first', guessAnswer['firstSection']);
+        guessAnswer['secondSection'] = findCorrectSolution('second', guessAnswer['secondSection']);
+        console.log(guessAnswer['firstSection']);
+        console.log(guessAnswer['secondSection']);
+        
+        if(guessAnswer['firstSection'] == rightAnswer['firstSection'] & guessAnswer['secondSection'] == rightAnswer['secondSection']){
+            showModal("right");
+        }else{
+            showModal("fault");
+        }
+        }
+        function findCorrectSolution(section, rightAnswer){
+           var firstBox = document.querySelector("#" + section).children;
+           for(var i = 0; i <= 5; i++){
+               if(firstBox[i].firstElementChild !== null){
+                    var id = firstBox[i].firstElementChild.id;
+                    rightAnswer.push(id);
+               }
+           }
+           return rightAnswer.sort();
+        }
+
+        function showModal(status){
+            document.querySelector("#" + status).setAttribute("style", "display:block");
+            document.querySelector(".nextbtn").setAttribute("style", "display: block");
+        }
+
+
         typing();
 
-        function put(boxtype, num) {
-            for (i = 1; i <= num; i++) {
-                boxstr = "#" + boxtype + "rectbox" + i.toString()
-                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
-                    // document.getElementById("rectbox" + i.toString().setAttribute("style", "background-color: yellow;"));
-            }
+        function drag(event){
+            event.dataTransfer.setData('text', event.target.id);
         }
 
-        function clearColor(boxtype, num) {
-            for (i = 1; i <= num; i++) {
-                boxstr = "#" + boxtype + "rectbox" + i.toString()
-                document.querySelector(boxstr).removeAttribute("style", "background-color: yellow;");
-            }
+        function allowDrag(event, section){
+            event.preventDefault();
         }
 
-        function chooseColor(boxtype, num) {
-            for (i = 1; i <= num; i++) {
-                boxstr = "#" + boxtype + "rectbox" + i.toString()
-                document.querySelector(boxstr).setAttribute("style", "background-color: yellow;")
-                document.querySelector(boxstr).onmouseout = function() {
-                    // alert();
-                };
-                document.querySelector(boxstr).onmouseover = function() {
-
-                };
+        function drop(event, section){
+            event.preventDefault();
+            if(event.target.tagName == "DIV"){
+                // event.preventDefault();
+                var data = event.dataTransfer.getData('text');
+                event.target.appendChild(document.getElementById(data));
+                // console.log(event.target.parentElement);
+            }else if(event.target.tagName == "IMG"){
+                // console.log(event.target.parentElement);
+                var data = event.dataTransfer.getData('text');
+                // console.log(data);
+                var origin_parent = document.getElementById(data).parentElement;
+                // console.log(origin_parent);
+                div = event.target.outerHTML;
+                sectionDiv = event.target.parentElement;
+                sectionImg = event.target;
+                // console.log(section);
+                sectionDiv.innerHTML = "";
+                origin_parent.appendChild(sectionImg);
+                sectionDiv.appendChild(document.getElementById(data));
+                // document.querySelector("#middle").innerHTML += div;
+                // document.querySelector(".answer").innerHTML = "";
+                // document.querySelector(".answer").appendChild(document.getElementById(data));
             }
-            for (i = num; i <= 10; i++) {
-                boxstr = "#" + boxtype + "rectbox" + i.toString()
-                document.querySelector(boxstr).onmouseout = function() {
-                    // alert();
-                };
-                document.querySelector(boxstr).onmouseover = function() {
-
-                };
-            }
+            document.querySelector(".btn").setAttribute("style", "display: block");
         }
-
-        function rest() {
-            for (i = 1; i <= 6; i++) {
-                for (j = 1; j <= 6; j++) {
-                    boxstr = "#box" + i.toString() + "rectbox" + j.toString()
-                    document.querySelector(boxstr).removeAttribute("style", "background-color: yellow;");
-                }
-            }
-        }
-
-        function send(){
-            document.querySelector('.guess').setAttribute("style", "display: none");
-            document.querySelector('#btn').setAttribute("style", "display: none");
-            document.querySelector("#myChart").setAttribute("style", "display:block;width:670px;background-color: white;");
-        }
-
-
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'horizontalBar',
-
-            // The data for our dataset
-            data: {
-                labels: ['2年-5年未滿', '2年-5年未滿','1年-2年未滿', '逾6月-1年未滿', '6月以下', '拘役 罰金及免刑'],
-                datasets: [{
-                    label: '108年',
-                    backgroundColor: 'rgba(255, 99, 132, 0.8)',
-                    borderColor: 'rgba(255, 99, 132, 0.8)',
-                    data: [13, 53, 124, 1686, 48091, 18 ],
-                    barPercentage: 0.5,
-                    barThickness: 6,
-                    maxBarThickness: 8,
-                    minBarLength: 2,
-                }],
-            },
-
-            // Configuration options go here
-            options: {
-                scales: {
-                    xAxes: [{
-                        stacked: true
-                    }],
-                    yAxes: [{
-                        stacked: true
-                    }]
-                }
-            },
-            legend: {
-            labels: {
-                // This more specific font property overrides the global property
-                fontColor: 'white'
-            }
-        }
-                
-        });
-    
     </script>
-
 </body>
 
 </html>

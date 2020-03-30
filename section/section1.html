@@ -4,75 +4,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/section.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title>情境體驗(一)</title>
+    <link rel="stylesheet" href="../css/section1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <title>起訴通</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="little-container">
-            <div class="title">情境體驗(一)</div>
-            <div id="typing1"> </div>
-            <div class="chart" id="chart" style="display: none;">
-                <div class='tableauPlaceholder' id='viz1583039834448' style='position: relative'>
-                    <noscript>
-                        <a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CM&#47;CMW59842B&#47;1_rss.png' style='border: none' /></a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='path' value='shared&#47;CMW59842B' />
-                        <param name='toolbar' value='no' />
-                        <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CM&#47;CMW59842B&#47;1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='showShareOptions' value='false' />
-                        <param name='tabs' value='false' />
-                    </object>
+        <div class="little-container" >
+            <div class="title">起訴通</div>
+            <audio autoplay>
+                <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                <source src="../music/1.mp3" type="audio/mpeg">
+              <!-- Your browser does not support the audio element. -->
+              </audio>
+            <div class="img" onclick="showGame()" >
+                <div class="btn"><i class="fas fa-gavel rotate"></i>   起訴通，點我進入遊戲</div>
+            </div>
+            <div class="question1" style="display:none;">
+                <div class="left"><img src="../image/lin2.png" alt=""></div>
+                <div class="right" id="main">
+                    <div class="upper" id="typing1"></div>
+                    <div class="middle" id ="middle" style="display: none;">請選擇</div>
+                    <div class="down" id ="question1" style="display: none;">
+                        <div class="set1">
+                            <div class="set-title">一般酒駕</div>
+                            <div class="out-circle">
+                                <div class="inner-circle" onclick="chooseQuestoin(1)"></div>
+                            </div>
+                        </div>
+                        <div class="set2">
+                            <div class="set-title">酒駕致死或致重傷</div>
+                            <div class="out-circle">
+                                <div class="inner-circle" onclick="chooseQuestoin(2)"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right"  style="display: none;" id='section1'>
+                    <div class="upper"><img src="../image/drink.png" alt=""></div>
+                    <div class="middle"><span>一般酒駕</span>近1年人數區間選項請點選</div>
+                    <div class="down" >
+                        <div class="down-circle">
+                            <div class="down-c" id="two-1" onclick="answer(1,'two-1')"><div class="down-c-l"></div></div>
+                            <div class="down-q">50-59%</div>
+                        </div>
+                        <div class="down-circle">
+                            <div class="down-c" id="two-2" onclick="answer(1,'two-2')"><div class="down-c-l"></div></div>
+                            <div class="down-q">60-69%</div>
+                        </div>
+                        <div class="down-circle" id="two-3" onclick="answer(1,'two-3')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">70-79%</div>
+                        </div>
+                        <div class="down-circle" id="two-4" onclick="answer(1,'two-4')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">80-89%</div>
+                        </div>
+                        <div class="down-circle" id="two-5" onclick="answer(1,'two-5')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">90%以上</div>
+                        </div>
+                    </div>
+                    <a href="./section2.html"><div class="nextbtn" style="display: none;" onclick="next()">下ㄧ關</div></a>
+                </div>
+                <div class="right" style="display:none;" id='section2'>
+                    <div class="upper"><img src="../image/drink.png" alt=""></div>
+                    <div class="middle"><span>酒駕致死或治重傷</span>近1年人數區間選項請點選</div>
+                    <div class="down" >
+                        <div class="down-circle">
+                            <div class="down-c" id="two-1" onclick="answer(2,'two-1')"><div class="down-c-l"></div></div>
+                            <div class="down-q">50-59%</div>
+                        </div>
+                        <div class="down-circle">
+                            <div class="down-c" id="two-2" onclick="answer(2,'two-2')"><div class="down-c-l"></div></div>
+                            <div class="down-q">60-69%</div>
+                        </div>
+                        <div class="down-circle" id="two-3" onclick="answer(2,'two-3')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">70-79%</div>
+                        </div>
+                        <div class="down-circle" id="two-4" onclick="answer(2,'two-4')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">80-89%</div>
+                        </div>
+                        <div class="down-circle" id="two-5" onclick="answer(2,'two-5')">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">90%以上</div>
+                        </div>
+                    </div>
+                    <a href="./section2.html"><div class="nextbtn" style="display: none;" onclick="next()">下ㄧ關</div></a>
+                </div>
+                <div class="right" style="display:none;" id='section3'>
+                    <div class="upper"><img src="../image/drink.png" alt=""></div>
+                    <div class="middle"><span>酒駕致死或治重傷</span>近1年人數區間選項請點選</div>
+                    <div class="down" >
+                        <div class="down-circle">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">50-59%</div>
+                        </div>
+                        <div class="down-circle">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">60-69%</div>
+                        </div>
+                        <div class="down-circle">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">70-79%</div>
+                        </div>
+                        <div class="down-circle">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">80-89%</div>
+                        </div>
+                        <div class="down-circle right">
+                            <div class="down-c"><div class="down-c-l"></div></div>
+                            <div class="down-q">90%以上</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a>
+            <div class="modal" style="display: none;" id="fault">
+                <div class="modal-content">
+                    <span class="close" id="faultclose">&times;</span>
+                    <p class="fault"><i class="fas fa-times"></i>      答錯囉</p>
+                    <div onclick="showAnswer()">看解答</div>
+                  </div>
+            </div>
+            <div class="modal" style="display: none;" id="right">
+                <div class="modal-content">
+                    <span class="close" id="rightclose">&times;</span>
+                    <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
+                    <div onclick="showAnswer()">看解答</div>
+                  </div>
+            </div>
+            <!-- <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a> -->
         </div>
     </div>
 
     <script>
-        var str = '法務部所屬檢察機關104年至108年辦理酒駕案件偵查終結有七成被起訴，猜猜看，<span style="color: yellow">「一般酒駕」</span>與<span style="color: yellow">「酒駕致死或致重傷」</span>的案件起訴人數及占比為何？<span style="color: yellow">(可點選框框之犯罪類型)</span>';
+        var str = '某一晚的下班，我跟好馬吉小林吃飯，途中大家開心喝了幾杯，吃完要回家時，他竟然要開車回家，聰明的你，可以幫我跟小林說現在起訴比率有多高嗎？';
         var i = 0;
 
         function typing() {
             var divTyping = document.getElementById('typing1');
+            
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
                 setTimeout('typing()', 100); //遞歸調用
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標
-                document.getElementById('chart').setAttribute('style', 'display:block');
-                document.getElementById('next').setAttribute('style', 'display:block');
-
+                // document.getElementById('next').setAttribute('style', 'display:block');
+                document.getElementById("question1").setAttribute('style', 'display:flex');
+                document.getElementById("middle").setAttribute('style', 'display:block');
             }
         }
-        typing();
-    </script>
-    <script type='text/javascript'>
-        var divElement = document.getElementById('viz1583039834448');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        if (divElement.offsetWidth > 800) {
-            vizElement.style.width = '600px';
-            vizElement.style.height = '400px';
-        } else if (divElement.offsetWidth > 500) {
-            vizElement.style.width = '600px';
-            vizElement.style.height = '400px';
-        } else {
-            vizElement.style.width = '600px';
-            vizElement.style.height = '400px';
+
+        function answer(num ,answer){
+             // Get the modal
+             if(num == 1){
+                if(answer == "two-5"){
+                    var modal = document.getElementById("right");
+                    modal.style.display = "block";
+                }else{
+                    var modal = document.getElementById("fault");
+                    modal.style.display = "block";       
+                }
+                document.querySelector("#section1 .nextbtn").setAttribute("style", "display:block;");
+             }else{
+                if(answer == "two-1"){
+                    var modal = document.getElementById("right");
+                    modal.style.display = "block";
+                }else{
+                    var modal = document.getElementById("fault");
+                    modal.style.display = "block";       
+                }  
+                document.querySelector("#section2 .nextbtn").setAttribute("style", "display:block;");
+             }
+             
+
         }
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+        function chooseQuestoin(num){
+            if(num == 1){
+                document.getElementById("main").setAttribute("style", "display:none;");
+                document.getElementById("section1").setAttribute("style", "display:flex;");
+            }else{
+                document.getElementById("main").setAttribute("style", "display:none;");
+                document.getElementById("section2").setAttribute("style", "display:flex;");
+            }
+            
+        }
+
+    
+        // Get the <span> element that closes the modal
+        var rightclose = document.getElementById("rightclose");
+        var faultclose = document.getElementById("faultclose");
+
+        // When the user clicks on the button, open the modal
+
+        // When the user clicks on <span> (x), close the modal
+        rightclose.onclick = function() {
+             var modal = document.getElementById("right");
+             modal.style.display = "none";
+        };
+        faultclose.onclick = function() {
+             var modal = document.getElementById("fault");
+             modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            var right = document.getElementById("right");
+            var fault = document.getElementById("fault");
+            if (event.target == right) {
+                right.style.display = "none";
+            }
+            if (event.target == fault) {
+                fault.style.display = "none";
+            }
+        }
+
+        function showGame(){
+            document.querySelector(".question1").setAttribute("style", "display: flex;");
+            document.querySelector(".img").setAttribute("style", "display: none;");
+            typing();
+            var audio = document.querySelector("audio");
+            audio.play();
+        }
+
+        function showAnswer(){
+            // document.querySelector("#section3").setAttribute("style", "display: flex;");
+        }
+
+        
     </script>
 </body>
 

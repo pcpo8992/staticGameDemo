@@ -19,7 +19,7 @@ body {
 .container .little-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 1280px;
     height: 750px;
     /* border: 1px solid red; */
     background-image: url("../svg/blackBoard2.svg");
@@ -37,138 +37,203 @@ body {
     /* border: 1px solid red; */
 }
 
-#typing1 {
-    margin-top: 50px;
-    font-size: 2em;
-    text-align: left;
-    width: 1000px;
-    color: #ffffff;
-    height: 160px;
-    /* border: 1px solid #ffffff; */
-}
-
-a.next {
-    color: #ffffff;
-    display: block;
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border: 2px solid rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 50px;
-    margin-top: -25px;
-    margin-left: -1020px;
-    display: none;
-}
-
-a.next:hover {
-    color: yellow;
-    font-size: 1.2em;
-}
-
-.chart {
-    width: 600px;
-    height: 390px;
-    /* border: 10px solid red; */
-    /* z-index: 1000000; */
-}
-
-.guess {
-    width: 800px;
-    height: 390px;
+.question1{
+    display: flex;
+    flex-flow: row;
     /* border: 1px solid red; */
-    margin-top: -50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    display: none;
+    width: 1000px;
+    height: 500px;
+    margin-top: 70px;
+    background-color: #fff;
 }
 
-.guess .sex,
-.static-title {
-    color: white;
-    font-size: 1.5em;
+.question1 .left{
+    width: 300px;
+    height: 100%;
+    /* width: 50px; */
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: end; */
+    align-items: flex-end;
+}
+
+.left img {
+    height: 420px;
+    /* border: 1px solid red; */
+}
+
+.question1 #main{
+    width: 700px;
+    height: 100%;
+    /* width: 50px; */
+    /* border: 1px solid red; */
+    display: flex;
+    /* justify-content: end; */
+    flex-flow: column;
+}
+
+#main .upper {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 100px;
+    /* line-height: 280px; */
+    color:black;
+    font-size: 2em;
+    /* text-align: center; */
+}
+
+#main .middle{
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 100px;
     text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+
 }
 
-.boy,
-.girl {
+.middle img{
+    width: 110px;
+}
+
+#main .down {
+    /* border: 1px solid red; */
+    width: 100%;
+    /* height: 200px; */
+    color:black;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    /* cursor: none; */
+    /* flex-flow: column; */
+    flex-direction: row;
+
+
 }
 
-.box {
-    width: 800px;
-    height: 50px;
-    /* border: 1px solid yellow; */
+.first, .second{
+    display: flex;
+    flex-grow: row;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red ;
+    padding: 5px;
+    margin: 1px;
+}
+
+.send{
+    /* border: 1px solid red; */
+    width: 70%;
+    height: 70px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    ;
+    justify-content: center;
     align-items: center;
 }
 
-.box .year {
-    color: #ffffff;
-    width: 140px;
-    /* width: 100px; */
-}
-
-div[class^="rectnum"] {
-    width: 80px;
-    height: 50px;
-    color: #ffffff;
-    /* border: 1px solid yellow; */
-    text-align: center;
-}
-
-div[class^="rectbox"] {
-    width: 80px;
-    height: 25px;
-    border: 1px solid yellow;
-    cursor: pointer;
-}
-
-.btn {
+.answer-box{
     display: flex;
-    color: #ffffff;
-    /* justify-content: center; */
+    flex-direction: row;
+    /* border: 1px solid red; */
+    width: 330px;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+
+.name{
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid red;
+    /* background-color: rgb(173, 107, 107); */
+}
+
+
+
+.answer{
+    width: 110px;
+    height: 60px;
+    border: 1px dashed blue;
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+}
+
+.answer img{
+    width: 100px;
+}
+
+.btn, .nextbtn{
+    width: 100px;
+    height: 50px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-left: 40px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
     display: none;
 }
 
-.rest {
-    width: 150px;
-    height: 50px;
-    line-height: 50px;
-    cursor: pointer;
-    font-size: 1em;
+.btn :hover{
+    background-color: blue;
+    color: white;
+    font-size: 2em;
+}
+
+.question1 a{
+    text-decoration: none;
+    color: black;
+}
+
+.question1 a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.modal{
+    /* display: none; Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
     text-align: center;
-    border: 1px solid #ffffff;
-    border-radius: 10px;
-}
+  }
 
-#send,
-#next {
-    border: 1px solid #ffffff;
-}
+  .modal-content .fault{
+      font-size: 4em;
+      color:red;
+  }
 
-.send {
-    width: 150px;
-    height: 50px;
-    line-height: 50px;
+  .modal-content .right{
+    font-size: 4em;
+    color:blue;
+}
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 1em;
-    text-align: center;
-    border-radius: 10px;
-    margin-left: 50px;
-}
-
-.rest:hover,
-.send:hover {
-    font-size: 1.5em;
-}
+  }

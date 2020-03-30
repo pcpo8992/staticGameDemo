@@ -4,40 +4,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/animate.css">
-    <title>統計情境體驗遊戲</title>
+    <link rel="stylesheet" href="./css/section0.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <title>法務統計小劇場</title>
 </head>
 
 <body>
     <div class="container">
-        <div class="title"></div>
-        <div class="little-container main-index" id="main-box">
-            <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>要付出什麼代價嗎？</div>
-            <div class="start  animated bounce  slow" id="button" onclick="showGame()">按此了解內容</div>
-            <div class="unit">法務統計小學堂</div>
-        </div>
-        <div class="little-container" style="display: none;" id="game-box">
-            <div class="people"></div>
-            <div class="inner-container">
-                <div class="notes">
-                    <div class="question">
-                        <div id="typing1"> </div>
+        <div class="little-container">
+            <div class="title">法務統計小劇場</div>
+            <div class="question1">
+                <video id="video1" width="1000" height="500" muted  >
+                    <source src="./video/movie.mp4" type="video/mp4">
+                    <!-- <source src="movie.ogg" type="video/ogg"> -->
+                  <!-- Your browser does not support the video tag. -->
+                </video>
+                <div class="right" id="main" style="display: none;">
+                    <div class="upper" id="typing1">就您了解的，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類</div>   
+                    <div class="middle" id ="middle1" >
+                        <img src="./image/Combat.png"  id="1" draggable="true" ondragstart="drag(event)" title="康貝特" alt="康貝特" >
+                        <img src="./image/Visby.png"  id=2" draggable="true" ondragstart="drag(event)"  title="維士比" alt="維士比">
+                        <img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力">
+                        <img src="./image/ShochuChicken.png"  id=4" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞">
+                        <img src="./image/ricewine.png"  id="5" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒">
+                        <img src="./image/Prettycow.png"  id="6" draggable="true" ondragstart="drag(event)" title="蠻牛" alt="蠻牛">
+                        <img src="./image/Polytec.png"  id="7" draggable="true" ondragstart="drag(event)" title="保力達" alt="保力達">
+                        <img src="./image/GingerDuck.png"  id="8" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞">   
                     </div>
-                    <div class="commentbox animated fadeIn" id="commentbox">
-                        <div class="linner-title">你覺得會付出什麼代價</div>
-                        <div class="section">
-                            <a href="#"><div class="box1" id="box1" onmousemove="move('box1');" onmouseout="out('box1')">觀看影片</div></a>
-                            <a href="./section/section1.html"><div class="box2" id="box2" onmousemove="move('box2');" onmouseout="out('box2')">情境體驗</div></a>
+                    <div class="down" id ="question1" >
+                        <div class="first">
+                            <div class="name">有酒駕嫌疑喔!!</div>
+                            <div class="answer-box" id ="first">
+                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+
+                            </div>
                         </div>
+                        <div class="second">
+                            <div class="name">別挑戰，灰色地帶</div>
+                            <div class="answer-box" id="second">
+                                <div class="answer" id="second-1" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+                                <div class="answer" id="second-2" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
+   
+                            </div>
+                        </div>   
+                        <div class="third">
+                            <div class="name">不含酒精，安啦!!</div>
+                            <div class="answer-box" id ="third">
+                                <div class="answer" id="third-1" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
+                                <div class="answer" id="third-2" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
+                                <div class="answer" id="third-3" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
+
+                            </div>
+                        </div>               
+                    </div>
+                    <div class="middle" id ="middle2" style="display: none;" >正確答案</div>
+                    <div class="down" id ="question2" style="display: none;">
+                        <div class="first">
+                            <div class="name">有酒駕嫌疑喔!!</div>
+                            <div class="answer-box" id ="first">
+                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/Visby.png"  id=2" draggable="true" ondragstart="drag(event)"  title="維士比" alt="維士比"></div>
+                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力"></div>
+                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/ricewine.png"  id="5" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒"></div>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div class="name">別挑戰，灰色地帶</div>
+                            <div class="answer-box" id="second">
+                                <div class="answer" id="second-1" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"><img src="./image/ShochuChicken.png"  id=4" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞"></div>
+                                <div class="answer" id="second-2" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"><img src="./image/GingerDuck.png"  id="8" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞"></div>
+                            </div>
+                        </div>   
+                        <div class="third">
+                            <div class="name">不含酒精，安啦!!</div>
+                            <div class="answer-box" id ="third">
+                                <div class="answer" id="third-1" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Combat.png"   draggable="true" ondragstart="drag(event)" title="康貝特" alt="康貝特" ></div>
+                                <div class="answer" id="third-2" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Prettycow.png"  id="6" draggable="true" ondragstart="drag(event)" title="蠻牛" alt="蠻牛"></div>
+                                <div class="answer" id="third-3" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力"></div>
+
+                            </div>
+                        </div>               
+                    </div>
+                    <div class="send">
+                        <div class="btn" onclick="show()">了解答案</div>
+                        <a href="./section/section0.html"><div class="nextbtn">進入主畫面</div></a>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-
     <script>
-        var str = '「喝酒不開車，開車不喝酒！」這句老生常談，大家都耳熟能詳，但卻不是人人都能做到。酒後駕車上路，不只危害自己的性命，更可能波及無辜他人，造成無法挽回的悲劇，這恣意妄為的結果，是要付出相當代價的。';
+        var str = '就您了解的，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類';
+
+        // var str = '1'
         var i = 0;
 
         function typing() {
@@ -47,32 +108,80 @@
                 setTimeout('typing()', 100); //遞歸調用
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標
-                divTyping.setAttribute("style", "border-bottom: 1px solid #ffffff;");
-                var commentbox = document.querySelector("#commentbox");
-                // console.log(commentbox);
-                commentbox.setAttribute("style", "display:block");
+         
+                document.getElementById("main").setAttribute('style', 'display:flex');
+                // document.getElementById("middle").setAttribute('style', 'display:block');
             }
         }
+            function playPause() { 
+                var myVideo = document.getElementById("video1"); 
+                if (myVideo.paused) 
+                    myVideo.play(); 
+                else 
+                    myVideo.pause(); 
+            } 
 
-        function move(boxstr){
-            str = "#" + boxstr
-            var box = document.querySelector(str);
-            box.setAttribute("class", boxstr + " animated swing");
+            function checkMoviePause(){
+                setInterval(function(){
+                    var myVideo = document.getElementById("video1"); 
+                    if(myVideo.paused){
+                        myVideo.setAttribute('style', 'display: none');
+                        typing();
+                    }
+                },1);
+            }
+
+        window.onload = function(){
+            playPause();
+            checkMoviePause();
+        }
+        function drag(event){
+            event.dataTransfer.setData('text', event.target.id);
+
         }
 
-        function out(boxstr){
-            str = "#" + boxstr
-            var box = document.querySelector(str);
-            box.setAttribute("class", boxstr);         
+        function allowDrag(event, section){
+            event.preventDefault();
         }
 
-        function showGame(){
-            var mainBox = document.querySelector("#main-box");
-            var gameBox = document.querySelector("#game-box");
+        function drop(event, section){
+            event.preventDefault();
+            if(event.target.tagName == "DIV"){
+                // event.preventDefault();
+                var data = event.dataTransfer.getData('text');
+                img = document.getElementById(data);
+                // console.log(img);
+                event.target.appendChild(img);
+                // event.target.setAttribute('style', 'width:' + img.width + 'px');
+                // console.log('width:' + img.width);
+                // console.log(event.target.parentElement);
+            }else if(event.target.tagName == "IMG"){
+                // console.log(event.target.parentElement);
+                var data = event.dataTransfer.getData('text');
+                // console.log(data);
+                var origin_parent = document.getElementById(data).parentElement;
+                // console.log(origin_parent);
+                div = event.target.outerHTML;
+                sectionDiv = event.target.parentElement;
+                sectionImg = event.target;
+                // console.log(section);
+                sectionDiv.innerHTML = "";
+                origin_parent.appendChild(sectionImg);
+                sectionDiv.appendChild(document.getElementById(data));
 
-            mainBox.setAttribute("style", "display: none");
-            gameBox.setAttribute("style", "display: flex");
-            typing();
+            }
+            document.querySelector(".btn").setAttribute("style", "display: block");
+        }
+
+        function show(){
+            document.querySelector("#middle1").innerHTML = '<div class="urAnswer" >您的答案</div>';
+            document.querySelector("#middle1").setAttribute("style", "height: 50px; line-height: 50px;");
+            document.querySelector("#typing1").setAttribute("style", "display: none;");
+            document.querySelector("#question2").setAttribute("style", "display: flex;");
+            document.querySelector("#middle2").setAttribute("style", "display: flex;height: 50px; line-height: 50px; border-top: 1px solid gray");
+            document.querySelector(".btn").setAttribute("style", "display: none;");
+            document.querySelector(".nextbtn").setAttribute("style", "display: block;");
+            
         }
 
     </script>
