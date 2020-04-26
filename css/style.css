@@ -41,7 +41,7 @@ body {
     margin-top: 100px;
     overflow: hidden;
     animation: typing 4s;
-    width: 20em;
+    width: 16em;
 }
 
 @keyframes typing {
@@ -120,6 +120,7 @@ body {
 
 .typing1 {
     letter-spacing: normal;
+    width: 100%;
 }
 
 .commentbox {

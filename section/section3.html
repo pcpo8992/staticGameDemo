@@ -8,9 +8,18 @@
 </head>
 <body>
 <div class="container">
+  <audio autoplay>
+    <!-- <source src="horse.ogg" type="audio/ogg"> -->
+    <source src="../music/3.mp3" type="audio/mpeg">
+  <!-- Your browser does not support the audio element. -->
+  </audio>
   <div class="little-container">
       <div class="title">特徵通-性別</div>
-      <div class="question1">
+      <div class="img" onclick="showGame()" >
+        <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>案件男女性誰多？？</div>
+        <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
+    </div>
+      <div class="question1" style="display: none;">
           <div class="left"><img src="../image/lin2.png" alt=""></div>
           <div class="right" id="main">
               <div class="upper" id="typing1"></div>
@@ -26,20 +35,6 @@
                 
           </div>
           <a href="section4.html"><div class=" nextgame" style="display:none" >下一關</div></a>
-          <div class="modal" style="display: none;" id="fault">
-            <div class="modal-content">
-                <span class="close" id="faultclose">&times;</span>
-                <p class="fault"><i class="fas fa-times"></i>      答錯囉</p>
-                <div onclick="showAnswer()">看解答</div>
-              </div>
-        </div>
-        <div class="modal" style="display: none;" id="right">
-            <div class="modal-content">
-                <span class="close" id="rightclose">&times;</span>
-                <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
-                <div onclick="showAnswer()">看解答</div>
-              </div>
-        </div>
       </div>
   </div>
 </div>
@@ -52,13 +47,28 @@
             var divTyping = document.getElementById('typing1');
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 80); //遞歸調用
+                setTimeout('typing()', 150); //遞歸調用
+                var people = document.querySelector(".left img");
+                if(i >= 2 && i <= 5 ){
+                    people.src = "../image/lin3.png";
+                }else if (i > 2 && i % 2 == 0 ){
+                    people.src = "../image/lin4.png";
+                }else if (i > 2 && i % 2 == 1 ){
+                    people.src = "../image/lin5.png";
+                }
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標   
+                document.querySelector('#middle').setAttribute('style', 'display:flex');  
                 document.querySelector('#question1').setAttribute('style', 'display:flex');   
             }
         }
-        typing();
+        function showGame(){
+            document.querySelector(".question1").setAttribute("style", "display: flex;");
+            document.querySelector(".img").setAttribute("style", "display: none;");
+            typing();
+            var audio = document.querySelector("audio");
+            audio.play();
+        }
 
         function judge(sextype){
             var sex = document.getElementById(sextype);
@@ -80,8 +90,14 @@
           var girl = document.getElementById("girl");
 
           if(boy.classList.length == 1 & girl.classList.length == 1){
-            alert("請先選擇性別");
+            // alert("");
+            document.querySelector('#middle').textContent = "請先選擇性別!"
           }else{
+            if(boy.classList.length == 1){
+              document.querySelector('#middle').textContent = "答錯了，男性比較多70%";
+            }else{
+              document.querySelector('#middle').textContent = "答對了，男性比較多70%";
+            }
             var bridge = document.getElementById("bridge");
             var send = document.getElementById("sendbtn");
             bridge.setAttribute("style", "transform:rotate(5deg)");
@@ -95,34 +111,6 @@
             
           }
         }
-
-        // Get the <span> element that closes the modal
-          var rightclose = document.getElementById("rightclose");
-        var faultclose = document.getElementById("faultclose");
-
-        // When the user clicks on the button, open the modal
-
-        // When the user clicks on <span> (x), close the modal
-        rightclose.onclick = function() {
-             var modal = document.getElementById("right");
-             modal.style.display = "none";
-        };
-        faultclose.onclick = function() {
-             var modal = document.getElementById("fault");
-             modal.style.display = "none";
-        };
-
-        window.onclick = function(event) {
-            var right = document.getElementById("right");
-            var fault = document.getElementById("fault");
-            if (event.target == right) {
-                right.style.display = "none";
-            }
-            if (event.target == fault) {
-                fault.style.display = "none";
-            }
-        }
-
 </script>
 
 </body>

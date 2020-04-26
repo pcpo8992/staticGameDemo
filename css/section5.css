@@ -15,6 +15,17 @@ body {
     /* border: 1px solid red; */
     /* background-color: rgb(87, 60, 60); */
 }
+.img {
+    margin-top: 250px;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .container .little-container {
     display: flex;
@@ -114,7 +125,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red ;
+    border: 1px solid blue ;
+    border-radius: 5px;
     padding: 5px;
     margin: 1px;
 }
@@ -144,7 +156,7 @@ body {
     line-height: 60px;
     text-align: center;
     font-size: 1em;
-    border: 1px solid red;
+    /* border: 1px solid rgb(75, 109, 184); */
     /* background-color: rgb(173, 107, 107); */
 }
 
@@ -163,20 +175,21 @@ body {
     width: 100px;
 }
 
-.btn, .nextbtn{
-    width: 100px;
-    height: 50px;
-    border: 1px solid blue;
-    border-radius: 10px;
-    font-size: 1.5em;
-    margin-left: 40px;
-    line-height: 50px;
+.sendbtn, .nextbtn{
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    background-color: #007bff;
+    color: #fff;
     text-align: center;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
     cursor: pointer;
+    text-decoration: none;
     display: none;
 }
 
-.btn :hover{
+.sendbtn :hover{
     background-color: blue;
     color: white;
     font-size: 2em;
@@ -236,4 +249,12 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .watch-answer{
+      cursor: pointer;
+  }
+
+  .watch-answer:hover{
+      font-size: 2em;
   }

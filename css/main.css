@@ -1,0 +1,113 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 1280px;
+    height: 750px;
+    /* background-color: rgb(87, 60, 60); */
+}
+
+.container .little-container {
+    display: flex;
+    flex-direction: column;
+    width: 1280px;
+    height: 750px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+
+.container .title {
+    font-size: 2em;
+    margin-top: 25px;
+    height: 20px;
+}
+
+#main-section .question1{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 1000px;
+    height: 500px;
+    margin-top: 70px;
+    background-color: #fff;
+}
+
+#main-section .question1 .right{
+    width: 900px;
+    height: 500px;
+    /* width: 50px; */
+    display: flex;
+    /* justify-content: end; */
+    background-image: url("../image/logo/logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-flow: column;
+}
+
+#main-section .right .upper {
+
+    width: 100%;
+    height: 180px;
+    /* line-height: 280px; */
+    color:black;
+    font-size: 2em;
+    /* text-align: center; */
+}
+
+#main-section .right .middle{
+    margin-left: -40px;
+    margin-top: -20px;
+    width: 110%;
+    height: 150px;
+    /* line-height: 100px; */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+}
+
+#main-section .middle .bgc{
+    margin-right: 4px;
+    width: 390px;
+    height:  150px;
+    background-image: url("../image/logo/background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#main-section .middle img{
+    width: 200px;
+    height: 100px;
+    background-color: white;
+}
+
+.middle .bgc .orange{
+    border: 2px solid orange;
+}
+
+.middle .bgc .purple{
+    border: 2px solid purple;
+}
+
+.middle .bgc .green{
+    border: 2px solid green;
+}
+
+.middle .bgc .blue{
+    border: 2px solid blue;
+}

@@ -11,22 +11,31 @@
 
 <body>
     <div class="container">
+        <audio autoplay>
+            <!-- <source src="horse.ogg" type="audio/ogg"> -->
+            <source src="../music/2.mp3" type="audio/mpeg">
+          <!-- Your browser does not support the audio element. -->
+          </audio>
         <div class="little-container">
             <div class="title">定罪通</div>
-            <div class="question1">
+            <div class="img" onclick="showGame()" >
+                <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>案件定罪率？？</div>
+                <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
+            </div>
+            <div class="question1" style="display:none;">
                 <div class="left"><img src="../image/lin2.png" alt=""></div>
                 <div class="right" id="main">
                     <div class="upper" id="typing1"></div>
                     <div class="middle" id ="middle" style="display: none;">108年的酒駕定罪率 : <span id="num">0</span>%</div>
                     <div class="down" id ="question1" style="display: none;">
                         <div class="progress-container">
-                            <div id="myBar" class="progressbar w3-green" ></div>
+                            <div id="myBar" class="progressbar green" ></div><span id="hint" style="display: none;">提示：</span>
                         </div>
                     </div>
                     <div class="middle" id="answer-title" style="display: none;">正確答案    108年的酒駕定罪率 : <span>85</span>%</div>
                     <div class="down" id ="answer-block" style="display: none;">
                         <div class="progress-container">
-                            <div id="myBar" class="progressbar w3-green" style="width: 425px;">85%</div>
+                            <div id="myBar" class="progressbar red" style="width: 425px;">85%</div>
                         </div>
                     </div>
                     <div class="sendbtn sendanswer" onclick="sendbtn()" style="display: none;">看答案</div>
@@ -46,7 +55,18 @@
             var divTyping = document.getElementById('typing1');
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 100); //遞歸調用
+                setTimeout('typing()', 150); //遞歸調用
+                var people = document.querySelector(".left img");
+                if(i >= 2 && i <= 5 ){
+                    people.src = "../image/lin3.png";
+                    // people.setAttribute("style", "background-image: url('../image/lin3.png');")
+                }else if (i > 2 && i % 2 == 0 ){
+                    // people.setAttribute("style", "background-image: url('../image/lin4.png');")
+                    people.src = "../image/lin4.png";
+                }else if (i > 2 && i % 2 == 1 ){
+                    // people.setAttribute("style", "background-image: url('../image/lin5.png');")
+                    people.src = "../image/lin5.png";
+                }
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標
                 // document.getElementById('next').setAttribute('style', 'display:block');
@@ -63,31 +83,22 @@
             // console.log(num);
             document.getElementById("num").textContent = num;
             var myBar = document.getElementById("myBar");
-            myBar.setAttribute("style", "width:" + width.toString() + "px;background-color: red;");
+            myBar.setAttribute("style", "width:" + width.toString() + "px;background-color: green;");
             myBar.textContent = num + "%";
             document.querySelector(".sendbtn").setAttribute('style', 'display:block');
-  
-        }
+            var hint_text = document.querySelector('#hint');
+            hint_text.setAttribute('style', 'display:block');
+            if(num < 50){
+                hint_text.innerHTML = "提示：<span style='color:red'>太低了</span>";
+            }else if (num > 90){
+                hint_text.innerHTML = "提示：<span style='color:red'>太高了</span>";
+            }else if (num == 85){
+                hint_text.innerHTML = "";
+                sendbtn();
+            }else{
+                hint_text.innerHTML = "提示：<span style='color:red'>接近中</span>";
+            }
 
-        function answer(num ,answer){
-             // Get the modal
-             if(num == 1){
-                if(answer == "two-5"){
-                    var modal = document.getElementById("right");
-                    modal.style.display = "block";
-                }else{
-                    var modal = document.getElementById("fault");
-                    modal.style.display = "block";       
-                }
-             }else{
-                if(answer == "two-1"){
-                    var modal = document.getElementById("right");
-                    modal.style.display = "block";
-                }else{
-                    var modal = document.getElementById("fault");
-                    modal.style.display = "block";       
-                }  
-             }
 
         }
 
@@ -108,7 +119,7 @@
             document.querySelector("#answer-block").setAttribute("style", "display: flex;");
             num = document.getElementById("num").textContent 
             var myBar = document.getElementById("myBar");
-            myBar.setAttribute("style", "width:" + (num * 5).toString() + "px;background-color: red;");
+            myBar.setAttribute("style", "width:" + (num * 5).toString() + "px;background-color: green;");
             myBar.textContent = num + "%";
             document.querySelector(".progress-container").onmousemove = function(){
 
@@ -119,7 +130,13 @@
             document.querySelector(".nextgame").setAttribute('style', 'display:block');
         }
 
-        typing();
+        function showGame(){
+            document.querySelector(".question1").setAttribute("style", "display: flex;");
+            document.querySelector(".img").setAttribute("style", "display: none;");
+            typing();
+            var audio = document.querySelector("audio");
+            audio.play();
+        }
     </script>
 </body>
 

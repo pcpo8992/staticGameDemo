@@ -30,6 +30,17 @@ body {
     align-items: center;
 }
 
+.img {
+    margin-top: 250px;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container .title {
     font-size: 2em;
     margin-top: 25px;
@@ -62,7 +73,17 @@ body {
     /* border: 1px solid red; */
 }
 
-.question1 #main{
+.right-col{
+    display: flex;
+    flex-flow: column;
+}
+
+.right-row{
+    display: flex;
+    flex-flow: row; 
+}
+
+.question1 [id^="main"]{
     width: 700px;
     height: 100%;
     /* width: 50px; */
@@ -72,20 +93,20 @@ body {
     flex-flow: column;
 }
 
-#main .upper {
+.upper {
     /* border: 1px solid red; */
     width: 100%;
-    height: 200px;
+    height: 160px;
     /* line-height: 280px; */
     color:black;
     font-size: 2em;
     /* text-align: center; */
 }
 
-#main .middle{
+[id^="main"] .middle{
     width: 100%;
     /* border: 1px solid red; */
-    height: 250px;
+    /* height: 180px; */
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
@@ -93,13 +114,13 @@ body {
 }
 
 .middle img{
-    width: 150px;
+    width: 100px;
 }
 
-#main .down {
+[id^="main"] .down {
     /* border: 1px solid red; */
     width: 100%;
-    /* height: 200px; */
+    height: 100px;
     color:black;
     display: flex;
     flex-grow: row;
@@ -110,33 +131,34 @@ body {
 
 .name{
     width: 200px;
-    height: 150px;
-    line-height: 150px;
+    height: 120px;
+    line-height: 120px;
     text-align: center;
     font-size: 1.5em;
     /* border: 1px solid red; */
 }
 
-.answer{
-    width: 150px;
-    height: 110px;
+[class^="answer"]{
+    width: 100px;
+    height: 75px;
     border: 1px dashed blue;
 }
 
-.btn, .nextbtn{
-    width: 100px;
-    height: 50px;
-    border: 1px solid blue;
-    border-radius: 10px;
-    font-size: 1.5em;
-    margin-left: 40px;
-    line-height: 50px;
+.sendbtn, .nextbtn{
+    border: 1px solid #007bff;
+    border-radius: .25rem;
+    background-color: #007bff;
+    color: #fff;
     text-align: center;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
     cursor: pointer;
+    text-decoration: none;
     display: none;
 }
 
-.btn :hover{
+.sendbtn :hover{
     background-color: blue;
     color: white;
     font-size: 2em;
@@ -196,4 +218,9 @@ body {
     color: black;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .clickbtn{
+      display: flex;
+      flex-flow: row;
   }

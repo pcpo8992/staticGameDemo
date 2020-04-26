@@ -29,7 +29,7 @@
                         <div id="typing1"> </div>
                         <audio autoplay>
                             <!-- <source src="horse.ogg" type="audio/ogg"> -->
-                            <source src="../music/test.mp3" type="audio/mpeg">
+                            <source src="../music/index.mp3" type="audio/mpeg">
                           <!-- Your browser does not support the audio element. -->
                           </audio>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="modal" style="display: none;" id="fault">
                         <div class="modal-content">
                             <span class="close" id="faultclose" onclick="test2()">&times;</span>
-                            <iframe  width="789" height="450" src="https://www.youtube.com/embed/rHaHBFpGqO0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe  width="789" height="450" src="https://www.youtube.com/embed/I41ZF62ggMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -67,10 +67,19 @@
             var divTyping = document.getElementById('typing1');
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 100); //遞歸調用
+                setTimeout('typing()', 130); //遞歸調用
+                var people = document.querySelector(".container .people");
+                if(i >= 2 && i <= 5 ){
+                    people.setAttribute("style", "background-image: url('../image/lin4.png');")
+                }else if (i > 2 && i % 2 == 0 ){
+                    people.setAttribute("style", "background-image: url('../image/lin4.png');")
+                }else if (i > 2 && i % 2 == 1 ){
+                    people.setAttribute("style", "background-image: url('../image/lin5.png');")
+                }
+                
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標
-                divTyping.setAttribute("style", "border-bottom: 1px solid #ffffff;");
+                divTyping.setAttribute("style", "border-bottom: 1px solid #ffffff;width: 100%;");
                 var commentbox = document.querySelector("#commentbox");
                 // console.log(commentbox);
                 commentbox.setAttribute("style", "display:block");
@@ -84,27 +93,21 @@
         }
 
         function test() {
-            // document.querySelector("#youtube-text").setAttribute("style", "display: none;");
             document.querySelector(".modal").setAttribute("style", "display: block;");
-            // console.log('123');
+            var movie = document.querySelector("iframe");
+            movie.src = "https://www.youtube.com/embed/I41ZF62ggMk";
         }
-
-        // Get the <span> element that closes the modal
-        // var rightclose = document.getElementById("rightclose");
-        // var faultclose = document.getElementById("faultclose");
 
         // When the user clicks on the button, open the modal
 
         function test2() {
             var modal = document.getElementById("fault");
             modal.style.display = "none";
-            console.log('456');
-            document.querySelector("iframe").setAttribute("style", "disabled: true");
-            document.querySelector("#youtube-text").setAttribute("style", "display: block;");
+            var movie = document.querySelector("iframe");
+            movie.src = "";
         };
 
         function out(boxstr) {
-
                 str = "#" + boxstr
                 var box = document.querySelector(str);
                 box.setAttribute("class", boxstr);

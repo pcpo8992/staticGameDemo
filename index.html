@@ -4,32 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/section0.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-    <title>法務統計小劇場</title>
+    <title>法務統計犯罪類型情境體驗</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="main-section">
+        <div class="little-container">
+            <div class="title"></div>
+            <div class="question1">
+                <div class="right" >
+                    <div class="upper">
+                    </div>   
+                    <div class="middle" >  
+                        <div class="bgc"><img id="drunk" class="orange" src="./image/logo/drunk.png" alt="drunk"></div>
+                        <div class="bgc"><img class="purple" src="./image/logo/drug.png" alt="drug"></div>
+                        <div class="bgc"><img class="green" src="./image/logo/theft.png" alt="theft"></div>
+                        <div class="bgc"><img class="blue" src="./image/logo/telecommunicationsFraud.png" alt="telecommunicationsFraud"></div>
+                    </div>
+                    <div class="down">    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="drunk-section" style="display:none;">
         <div class="little-container">
             <div class="title">法務統計小劇場</div>
             <div class="question1">
-                <video id="video1" width="1000" height="500" muted  >
-                    <source src="./video/movie.mp4" type="video/mp4">
-                    <!-- <source src="movie.ogg" type="video/ogg"> -->
+                <video id="video1" width="1000" height="500"   >
+                    <source src="./video/movie_r.mp4" type="video/mp4">
                   <!-- Your browser does not support the video tag. -->
                 </video>
-                <div class="right" id="main" style="display: none;">
-                    <div class="upper" id="typing1">就您了解的，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類</div>   
+                <audio >
+                    <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                    <source src="./music/0.mp3" type="audio/mpeg">
+                  <!-- Your browser does not support the audio element. -->
+                  </audio>
+                <div class="right" id="question1-main" style="display: none;">
+                    <div class="upper" id="typing1">就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類</div>   
                     <div class="middle" id ="middle1" >
-                        <img src="./image/Combat.png"  id="1" draggable="true" ondragstart="drag(event)" title="康貝特" alt="康貝特" >
-                        <img src="./image/Visby.png"  id=2" draggable="true" ondragstart="drag(event)"  title="維士比" alt="維士比">
-                        <img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力">
-                        <img src="./image/ShochuChicken.png"  id=4" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞">
-                        <img src="./image/ricewine.png"  id="5" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒">
-                        <img src="./image/Prettycow.png"  id="6" draggable="true" ondragstart="drag(event)" title="蠻牛" alt="蠻牛">
-                        <img src="./image/Polytec.png"  id="7" draggable="true" ondragstart="drag(event)" title="保力達" alt="保力達">
-                        <img src="./image/GingerDuck.png"  id="8" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞">   
+                        <img src="./image/logo/beer.png"  id="1" draggable="true" ondragstart="drag(event)" title="生啤酒" alt="生啤酒" >
+                        <img src="./image/logo/Visby.png"  id="2" draggable="true" ondragstart="drag(event)"  title="維士比" alt="維士比">
+                        <img src="./image/logo/Bubbledrink.png"  id="3" draggable="true" ondragstart="drag(event)" title="氣泡飲料" alt="氣泡飲料">
+                        <img src="./image/logo/ShochuChicken.png"  id="4" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞">
+                        <img src="./image/logo/Tincture.png"  id="5" draggable="true" ondragstart="drag(event)" title="藥酒" alt="藥酒">
+                        <img src="./image/logo/Refreshingdrink.png"  id="6" draggable="true" ondragstart="drag(event)" title="提神飲料" alt="提神飲料">
+                        <img src="./image/ricewine.png"  id="7" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒">
+                        <img src="./image/logo/Lambstove.png"  id="8" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞">   
                     </div>
                     <div class="down" id ="question1" >
                         <div class="first">
@@ -63,29 +86,31 @@
                     <div class="down" id ="question2" style="display: none;">
                         <div class="first">
                             <div class="name">有酒駕嫌疑喔!!</div>
-                            <div class="answer-box" id ="first">
-                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/Visby.png"  id=2" draggable="true" ondragstart="drag(event)"  title="維士比" alt="維士比"></div>
-                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力"></div>
-                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"><img src="./image/ricewine.png"  id="5" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒"></div>
+                            <div class="answer-box" >
+                                <div class="answer" ><img src="./image/logo/beer.png"   title="生啤酒" alt="生啤酒"></div>
+                                <div class="answer"><img src="./image/logo/Tincture.png"   title="藥酒" alt="藥酒"></div>
+                                <div class="answer" ><img src="./image/ricewine.png"   title="米酒" alt="米酒"></div>
                             </div>
                         </div>
                         <div class="second">
                             <div class="name">別挑戰，灰色地帶</div>
-                            <div class="answer-box" id="second">
-                                <div class="answer" id="second-1" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"><img src="./image/ShochuChicken.png"  id=4" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞"></div>
-                                <div class="answer" id="second-2" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"><img src="./image/GingerDuck.png"  id="8" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞"></div>
+                            <div class="answer-box" >
+                                <div class="answer"><img src="./image/logo/ShochuChicken.png"   title="燒酒雞" alt="燒酒雞"></div>
+                                <div class="answer"><img src="./image/logo/Lambstove.png"  title="麻油雞" alt="燒酒雞"></div>
                             </div>
                         </div>   
                         <div class="third">
                             <div class="name">不含酒精，安啦!!</div>
-                            <div class="answer-box" id ="third">
-                                <div class="answer" id="third-1" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Combat.png"   draggable="true" ondragstart="drag(event)" title="康貝特" alt="康貝特" ></div>
-                                <div class="answer" id="third-2" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Prettycow.png"  id="6" draggable="true" ondragstart="drag(event)" title="蠻牛" alt="蠻牛"></div>
-                                <div class="answer" id="third-3" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"><img src="./image/Vigor.png"  id="3" draggable="true" ondragstart="drag(event)" title="維大力" alt="維大力"></div>
+                            <div class="answer-box" >
+                                <div class="answer" ><img src="./image/Combat.png"    title="康貝特" alt="康貝特" ></div>
+                                <div class="answer" ><img src="./image/logo/Prettycow.png"    title="蠻牛" alt="蠻牛"></div>
+                                <div class="answer" ><img src="./image/logo/Bubbledrink.png"   title="氣泡飲料" alt="氣泡飲料"></div>
 
                             </div>
                         </div>               
                     </div>
+                
+   
                     <div class="send">
                         <div class="btn" onclick="show()">了解答案</div>
                         <a href="./section/section0.html"><div class="nextbtn">進入主畫面</div></a>
@@ -96,95 +121,103 @@
         </div>
     </div>
     <script>
-        var str = '就您了解的，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類';
-
-        // var str = '1'
-        var i = 0;
-
-        function typing() {
-            var divTyping = document.getElementById('typing1');
-            if (i <= str.length) {
-                divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 100); //遞歸調用
-            } else {
-                divTyping.innerHTML = str; //結束打字,移除 _ 光標
-         
-                document.getElementById("main").setAttribute('style', 'display:flex');
-                // document.getElementById("middle").setAttribute('style', 'display:block');
-            }
-        }
-            function playPause() { 
-                var myVideo = document.getElementById("video1"); 
-                if (myVideo.paused) 
-                    myVideo.play(); 
-                else 
-                    myVideo.pause(); 
-            } 
-
-            function checkMoviePause(){
-                setInterval(function(){
-                    var myVideo = document.getElementById("video1"); 
-                    if(myVideo.paused){
-                        myVideo.setAttribute('style', 'display: none');
-                        typing();
-                    }
-                },1);
-            }
-
-        window.onload = function(){
-            playPause();
-            checkMoviePause();
-        }
-        function drag(event){
-            event.dataTransfer.setData('text', event.target.id);
-
-        }
-
-        function allowDrag(event, section){
-            event.preventDefault();
-        }
-
-        function drop(event, section){
-            event.preventDefault();
-            if(event.target.tagName == "DIV"){
-                // event.preventDefault();
-                var data = event.dataTransfer.getData('text');
-                img = document.getElementById(data);
-                // console.log(img);
-                event.target.appendChild(img);
-                // event.target.setAttribute('style', 'width:' + img.width + 'px');
-                // console.log('width:' + img.width);
-                // console.log(event.target.parentElement);
-            }else if(event.target.tagName == "IMG"){
-                // console.log(event.target.parentElement);
-                var data = event.dataTransfer.getData('text');
-                // console.log(data);
-                var origin_parent = document.getElementById(data).parentElement;
-                // console.log(origin_parent);
-                div = event.target.outerHTML;
-                sectionDiv = event.target.parentElement;
-                sectionImg = event.target;
-                // console.log(section);
-                sectionDiv.innerHTML = "";
-                origin_parent.appendChild(sectionImg);
-                sectionDiv.appendChild(document.getElementById(data));
-
-            }
-            document.querySelector(".btn").setAttribute("style", "display: block");
-        }
-
-        function show(){
-            document.querySelector("#middle1").innerHTML = '<div class="urAnswer" >您的答案</div>';
-            document.querySelector("#middle1").setAttribute("style", "height: 50px; line-height: 50px;");
-            document.querySelector("#typing1").setAttribute("style", "display: none;");
-            document.querySelector("#question2").setAttribute("style", "display: flex;");
-            document.querySelector("#middle2").setAttribute("style", "display: flex;height: 50px; line-height: 50px; border-top: 1px solid gray");
-            document.querySelector(".btn").setAttribute("style", "display: none;");
-            document.querySelector(".nextbtn").setAttribute("style", "display: block;");
-            
-        }
-
+        var drunkBtn = document.querySelector("#drunk");
+        drunkBtn.addEventListener("click", function(e){
+           document.querySelector("#main-section").setAttribute("style", "display: none;");
+           document.querySelector("#drunk-section").setAttribute("style", "display: flex;");
+           var videoBtn = document.querySelector("#video1");
+           videoBtn.play();
+           checkMoviePause();
+        });
     </script>
-</body>
+        <script>
+            var str = '就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類';
+    
+            // var str = '1'
+            var i = 0;
+    
+            function typing() {
+                var divTyping = document.getElementById('typing1');
 
+                if (i <= str.length) {
+                    divTyping.innerHTML = str.slice(0, i++) + '_';
+                    setTimeout('typing()', 100); //遞歸調用
+                } else {
+                    divTyping.innerHTML = str; //結束打字,移除 _ 光標
+                    // document.getElementById("question1-main").setAttribute('style', 'display:flex');
+                    // document.getElementById("middle").setAttribute('style', 'display:block');
+                }
+            }
+
+            function playMusic(){
+                var audio = document.querySelector("audio");
+                    audio.play();
+            }
+                function playPause() { 
+                    var myVideo = document.getElementById("video1"); 
+                    if (myVideo.paused) 
+                        myVideo.play(); 
+                    else 
+                        myVideo.pause(); 
+                } 
+    
+                function checkMoviePause(){
+                    // setInterval(function(){
+                    //     var myVideo = document.getElementById("video1");
+                    //     console.log(100);
+                    //     if(myVideo.paused){
+                    //         myVideo.setAttribute('style', 'display: none');
+                    //         document.getElementById("question1-main").setAttribute('style', 'display:flex');
+                    //         typing();
+                    //         console.log(100);
+                    //     }
+                    // },1);
+                    setTimeout(function(){
+                        document.getElementById("video1").setAttribute('style', 'display: none');
+                        document.getElementById("question1-main").setAttribute('style', 'display:flex');
+                        typing();
+                        playMusic();
+                    }, 15000);
+                }
+    
+            function drag(event){
+                event.dataTransfer.setData('text', event.target.id);
+            }
+    
+            function allowDrag(event, section){
+                event.preventDefault();
+            }
+    
+            function drop(event, section){
+                event.preventDefault();
+                if(event.target.tagName == "DIV"){
+                    // console.log('123');
+                    var data = event.dataTransfer.getData('text');
+                    img = document.getElementById(data);
+                    event.target.appendChild(img);
+                }else if(event.target.tagName == "IMG"){
+                    var data = event.dataTransfer.getData('text');
+                    var origin_parent = document.getElementById(data).parentElement;
+                    div = event.target.outerHTML;
+                    sectionDiv = event.target.parentElement;
+                    sectionImg = event.target;
+                    sectionDiv.innerHTML = "";
+                    origin_parent.appendChild(sectionImg);
+                    sectionDiv.appendChild(document.getElementById(data));
+                }
+                document.querySelector(".btn").setAttribute("style", "display: block");
+            }
+    
+            function show(){
+                document.querySelector("#middle1").innerHTML = '<div class="urAnswer" >您的答案</div>';
+                document.querySelector("#middle1").setAttribute("style", "height: 50px; line-height: 50px;");
+                document.querySelector("#typing1").setAttribute("style", "display: none;");
+                document.querySelector("#question2").setAttribute("style", "display: flex;");
+                document.querySelector("#middle2").setAttribute("style", "display: flex;height: 50px; line-height: 50px; border-top: 1px solid gray");
+                document.querySelector(".btn").setAttribute("style", "display: none;");
+                document.querySelector(".nextbtn").setAttribute("style", "display: block;");  
+            }
+    
+        </script>
+</body>
 </html>

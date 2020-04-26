@@ -11,48 +11,86 @@
 
 <body>
     <div class="container">
+        <audio autoplay>
+            <!-- <source src="horse.ogg" type="audio/ogg"> -->
+            <source src="../music/4.mp3" type="audio/mpeg">
+            <!-- Your browser does not support the audio element. -->
+        </audio>
         <div class="little-container">
             <div class="title">特徵通-年齡</div>
-            <div class="question1">
+            <div class="img" onclick="showGame()">
+                <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>案件那個年齡層？？</div>
+                <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
+            </div>
+            <div class="question1" style="display: none;">
                 <div class="left"><img src="../image/lin2.png" alt=""></div>
-                <div class="right" id="main">
+                <div class="right-col">
                     <div class="upper" id="typing1"></div>
-                    <div class="middle" id ="middle" style="display: none;">
-                        <img src="../image/Lessthan20.svg"  id="Lessthan20" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
-                        <img src="../image/20to30years.svg" id="20to30years" draggable="true" ondragstart="drag(event)"  alt="20to30years">
-                        <img src="../image/30to40years.svg"  id="30to40years" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
-                        <img src="../image/40to50years.svg"  id="40to50years" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
-                        <img src="../image/50to60years.svg"  id="50to60years" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
-                        <img src="../image/Over60years.svg"  id="Over60years" draggable="true" ondragstart="drag(event)" alt="Lessthan20">
+                    <div class="right-col">
+                        <div class="right" id="main">
+                            <div class="middle" id="middle1" style="display: none;">
+                                <img src="../image/Lessthan20.svg" id="Lessthan20-1" draggable="true" ondragstart="drag(event)" alt="Lessthan20-1">
+                                <img src="../image/20to30years.svg" id="20to30years-1" draggable="true" ondragstart="drag(event)" alt="20to30years-1">
+                                <img src="../image/30to40years.svg" id="30to40years-1" draggable="true" ondragstart="drag(event)" alt="30to40years-1">
+                                <img src="../image/40to50years.svg" id="40to50years-1" draggable="true" ondragstart="drag(event)" alt="40to50years-1">
+                                <img src="../image/50to60years.svg" id="50to60years-1" draggable="true" ondragstart="drag(event)" alt="50to60years-1">
+                                <img src="../image/Over60years.svg" id="Over60years-1" draggable="true" ondragstart="drag(event)" alt="Over60years-1">
+                            </div>
+                            <div class="down" id="question1" style="display: none;">
+                                <div class="name">男性集中在</div>
+                                <div class="answer1" ondrop="drop(event, 1)" ondragover="allowDrag(event)"></div>
+                            </div>
+                        </div>
+                        <div class="down" id="answer1" style="display: none;">
+                            <div class="name">男性集中在</div>
+                            <div class="answer1"><img src="../image/50to60years.svg"  alt="50to60years-1"></div>
+                        </div>
+                        <div class="right" id="main2">
+                            <div class="middle" id="middle2" style="display: none;">
+                                <img src="../image/Lessthan20.svg" id="Lessthan20-2" draggable="true" ondragstart="drag(event)" alt="Lessthan20-2">
+                                <img src="../image/20to30years.svg" id="20to30years-2" draggable="true" ondragstart="drag(event)" alt="20to30years-2">
+                                <img src="../image/30to40years.svg" id="30to40years-2" draggable="true" ondragstart="drag(event)" alt="30to40years-2">
+                                <img src="../image/40to50years.svg" id="40to50years-2" draggable="true" ondragstart="drag(event)" alt="40to50years-2">
+                                <img src="../image/50to60years.svg" id="50to60years-2" draggable="true" ondragstart="drag(event)" alt="50to60years-2">
+                                <img src="../image/Over60years.svg" id="Over60years-2" draggable="true" ondragstart="drag(event)" alt="Over60years-2">
+                            </div>
+                            <div class="down" id="question2" style="display: none;">
+                                <div class="name">女性集中在</div>
+                                <div class="answer2" ondrop="drop(event, 2)" ondragover="allowDrag(event)"></div>
+                            </div>
+                            <div class="down" id="answer2" style="display: none;">
+                                <div class="name">女性集中在</div>
+                                <div class="answer2"><img src="../image/50to60years.svg"  alt="50to60years-1"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="down" id ="question1" style="display: none;">
-                        <div class="name">男性集中在</div>
-                        <div class="answer" ondrop="drop(event)" ondragover="allowDrag(event)"></div>
-                        <div class="btn" onclick="show()">送出</div>
-                        <a href="section5.html"><div class="nextbtn">下一關</div></a>
+                    <div class="clickbtn">
+                        <div class="sendbtn" onclick="show()" style="margin-right: 10px;">送出</div>
+                        <a href="section5.html">
+                            <div class="nextbtn">下一關</div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="modal" style="display: none;" id="fault">
                 <div class="modal-content">
                     <span class="close" id="faultclose">&times;</span>
-                    <p class="fault"><i class="fas fa-times"></i>      答錯囉</p>
-                    <div>看解答</div>
-                  </div>
+                    <p class="fault"><i class="fas fa-times"></i> 答錯囉</p>
+                    <div onclick="showAnswer()">看解答</div>
+                </div>
             </div>
             <div class="modal" style="display: none;" id="right">
                 <div class="modal-content">
                     <span class="close" id="rightclose">&times;</span>
-                    <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
-                    <div>看解答</div>
-                  </div>
+                    <p class="right"><i class="far fa-thumbs-up"></i> 答對了</p>
+                </div>
             </div>
             <!-- <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a> -->
         </div>
     </div>
 
     <script>
-        var str = '你覺得哪個年齡層最多？<br>(請將年齡拖曳至下方區塊)';
+        var str = '你覺得哪個年齡層最多？(請將年齡拖曳至下方)';
         // var str = '1'
         var i = 0;
 
@@ -60,30 +98,50 @@
             var divTyping = document.getElementById('typing1');
             if (i <= str.length) {
                 divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 100); //遞歸調用
+                setTimeout('typing()', 150); //遞歸調用
+                var people = document.querySelector(".left img");
+                if (i >= 2 && i <= 5) {
+                    people.src = "../image/lin3.png";
+                    // people.setAttribute("style", "background-image: url('../image/lin3.png');")
+                } else if (i > 2 && i % 2 == 0) {
+                    // people.setAttribute("style", "background-image: url('../image/lin4.png');")
+                    people.src = "../image/lin4.png";
+                } else if (i > 2 && i % 2 == 1) {
+                    // people.setAttribute("style", "background-image: url('../image/lin5.png');")
+                    people.src = "../image/lin5.png";
+                }
             } else {
                 divTyping.innerHTML = str; //結束打字,移除 _ 光標
                 // document.getElementById('next').setAttribute('style', 'display:block');
                 document.getElementById("question1").setAttribute('style', 'display:flex');
-                document.getElementById("middle").setAttribute('style', 'display:block');
+                document.getElementById("question2").setAttribute('style', 'display:flex');
+                document.getElementById("middle1").setAttribute('style', 'display:flex');
+                document.getElementById("middle2").setAttribute('style', 'display:flex');
             }
         }
 
         // Get the <span> element that closes the modal
         var rightclose = document.getElementById("rightclose");
         var faultclose = document.getElementById("faultclose");
-
+        var modalBtn = document.querySelectorAll(".modal-content");
         // When the user clicks on the button, open the modal
 
         // When the user clicks on <span> (x), close the modal
         rightclose.onclick = function() {
-             var modal = document.getElementById("right");
-             modal.style.display = "none";
+            var modal = document.getElementById("right");
+            modal.style.display = "none";
         };
         faultclose.onclick = function() {
-             var modal = document.getElementById("fault");
-             modal.style.display = "none";
+            var modal = document.getElementById("fault");
+            modal.style.display = "none";
         };
+
+        for(var j =0; j < modalBtn.length;j++){
+            modalBtn[j].addEventListener('click',function(){
+            document.getElementById("right").style.display = "none";
+            document.getElementById("fault").style.display = "none";
+            });
+        }
 
         window.onclick = function(event) {
             var right = document.getElementById("right");
@@ -96,46 +154,81 @@
             }
         }
 
-        function show(){
-           var rightAnswer = "50to60years";
-           var guessAnswer =  document.querySelector(".answer").firstChild.id;
-           if(rightAnswer == guessAnswer){
-                showModal("right");
-           }else{
-                showModal("fault");
-           }
-        }
-
-        function showModal(status){
-            document.querySelector("#" + status).setAttribute("style", "display:block");
+        function showAnswer(){
+            document.getElementById("middle1").setAttribute('style', 'display:none');
+            document.getElementById("middle2").setAttribute('style', 'display:none');
+            document.getElementById("question1").setAttribute('style', 'display:none');
+            document.getElementById("question2").setAttribute('style', 'display:none');
+            document.getElementById("answer1").setAttribute('style', 'display:flex');
+            document.getElementById("answer2").setAttribute('style', 'display:flex');
+            document.querySelector(".sendbtn").setAttribute("style", "display: none");
             document.querySelector(".nextbtn").setAttribute("style", "display: block");
         }
 
+        function show() {
+            var manRightAnswer = "50to60years-1";
+            var gilrRightAnswer = "50to60years-2";
+            var guessManAnswer = document.querySelector(".answer1").firstChild.id;
+            var guessGirlAnswer = document.querySelector(".answer2").firstChild.id;
+            if (manRightAnswer.toString() == guessManAnswer.toString() && gilrRightAnswer.toString() == guessGirlAnswer.toString()) {
+                showModal("right");
+                showAnswer();
+            } else {
+                showModal("fault");
+            }
+        }
 
-        typing();
+        function showModal(status) {
+            document.querySelector("#" + status).setAttribute("style", "display:block");
+        }
 
-        function drag(event){
+        function showGame() {
+            document.querySelector(".question1").setAttribute("style", "display: flex;");
+            document.querySelector(".img").setAttribute("style", "display: none;");
+            typing();
+            var audio = document.querySelector("audio");
+            audio.play();
+        }
+
+        function drag(event) {
             event.dataTransfer.setData('text', event.target.id);
         }
 
-        function allowDrag(event){
+        function allowDrag(event) {
             event.preventDefault();
         }
 
-        function drop(event){
+        function drop(event, area) {
             event.preventDefault();
-            if(event.target.tagName == "DIV"){
+            var data = event.dataTransfer.getData('text');
+            aim = data[data.length - 1];
+            if(area == "1" && aim == "1"){
+                if (event.target.tagName == "DIV") {
                 // event.preventDefault();
-                var data = event.dataTransfer.getData('text');
+                // var data = event.dataTransfer.getData('text');
                 event.target.appendChild(document.getElementById(data));
-            }else if(event.target.tagName == "IMG"){
-                var data = event.dataTransfer.getData('text');
+            } else if (event.target.tagName == "IMG") {
+                // var data = event.dataTransfer.getData('text');
                 div = event.target.outerHTML;
-                document.querySelector("#middle").innerHTML += div;
-                document.querySelector(".answer").innerHTML = "";
-                document.querySelector(".answer").appendChild(document.getElementById(data));
+                document.querySelector("#middle1").innerHTML += div;
+                document.querySelector(".answer1").innerHTML = "";
+                document.querySelector(".answer1").appendChild(document.getElementById(data));
             }
-            document.querySelector(".btn").setAttribute("style", "display: block");
+            }else if(area == "2" && aim == "2"){
+                if (event.target.tagName == "DIV") {
+                // event.preventDefault();
+                // var data = event.dataTransfer.getData('text');
+                event.target.appendChild(document.getElementById(data));
+            } else if (event.target.tagName == "IMG") {
+                // var data = event.dataTransfer.getData('text');
+                div = event.target.outerHTML;
+                document.querySelector("#middle2").innerHTML += div;
+                document.querySelector(".answer2").innerHTML = "";
+                document.querySelector(".answer2").appendChild(document.getElementById(data));
+            }
+            }
+
+            document.querySelector(".sendbtn").setAttribute("style", "display: block");
         }
     </script>
 </body>
