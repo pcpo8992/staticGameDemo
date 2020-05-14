@@ -1,221 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/section0min.css" />
+        <title>法務統計犯罪類型情境體驗</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/section0.css">
-    <title>法務統計犯罪類型情境體驗</title>
-</head>
-
-<body>
-    <div class="container" id="main-section">
-        <div class="little-container">
-            <div class="title"></div>
-            <div class="question1">
-                <div class="right" >
-                    <div class="upper">
-                    </div>   
-                    <div class="middle" >  
-                        <div class="bgc"><img id="drunk" class="orange" src="./image/logo/drunk.png" alt="drunk"></div>
-                        <div class="bgc"><img class="purple" src="./image/logo/drug.png" alt="drug"></div>
-                        <div class="bgc"><img class="green" src="./image/logo/theft.png" alt="theft"></div>
-                        <div class="bgc"><img class="blue" src="./image/logo/telecommunicationsFraud.png" alt="telecommunicationsFraud"></div>
-                    </div>
-                    <div class="down">    
+    <body>
+        <div class="container" id="main-section">
+            <div class="little-container">
+                <div class="title"></div>
+                <div class="question1">
+                    <div class="right">
+                        <div class="upper"></div>
+                        <div class="middle">
+                            <div class="bgc"><img id="drunk" class="orange" src="./image/logo/drunk.jpg" alt="drunk" /></div>
+                            <div class="bgc"><img class="purple" src="./image/logo/drug.jpg" alt="drug" /></div>
+                            <div class="bgc"><img class="green" src="./image/logo/theft.jpg" alt="theft" /></div>
+                            <div class="bgc"><img class="blue" src="./image/logo/telecommunicationsFraud.jpg" alt="telecommunicationsFraud" /></div>
+                        </div>
+                        <div class="down"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container" id="drunk-section" style="display:none;">
-        <div class="little-container">
-            <div class="title">法務統計小劇場</div>
-            <div class="question1">
-                <video id="video1" width="1000" height="500"   >
-                    <source src="./video/movie_r.mp4" type="video/mp4">
-                  <!-- Your browser does not support the video tag. -->
-                </video>
-                <audio >
-                    <!-- <source src="horse.ogg" type="audio/ogg"> -->
-                    <source src="./music/0.mp3" type="audio/mpeg">
-                  <!-- Your browser does not support the audio element. -->
-                  </audio>
-                <div class="right" id="question1-main" style="display: none;">
-                    <div class="upper" id="typing1">就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類</div>   
-                    <div class="middle" id ="middle1" >
-                        <img src="./image/logo/beer.jpg"  id="1" draggable="true" ondragstart="drag(event)" title="生啤酒" alt="生啤酒" >
-                        <img src="./image/logo/Polytec.jpg"  id="2" draggable="true" ondragstart="drag(event)"  title="保力達"" alt="保力達">
-                        <img src="./image/logo/Bubbledrink.png"  id="3" draggable="true" ondragstart="drag(event)" title="氣泡飲料" alt="氣泡飲料">
-                        <img src="./image/logo/ShochuChicken.png"  id="4" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞">
-                        <img src="./image/logo/Tincture.jpg"  id="5" draggable="true" ondragstart="drag(event)" title="藥酒" alt="藥酒">
-                        <img src="./image/logo/Refreshingdrink.jpg"  id="6" draggable="true" ondragstart="drag(event)" title="提神飲料" alt="提神飲料">
-                        <img src="./image/logo/ricewine.jpg"  id="7" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒">
-                        <img src="./image/logo/Lambstove.png"  id="8" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞">   
-                    </div>
-                    <div class="down" id ="question1" >
-                        <div id ="first" class="first">
-                            <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            <div class="answer" id="first-4" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            <div class="answer" id="first-5" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            <div class="answer" id="first-6" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+        <div class="container" id="drunk-section" style="display: none;">
+            <div class="little-container">
+                <div class="title">法務統計小劇場</div>
+                <div class="question1">
+                    <video id="video1" width="1000" height="500">
+                        <source src="./video/movie_r.mp4" type="video/mp4" />
+                        <!-- Your browser does not support the video tag. -->
+                    </video>
+                    <audio>
+                        <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                        <source src="./music/0.mp3" type="audio/mpeg" />
+                        <!-- Your browser does not support the audio element. -->
+                    </audio>
+                    <div class="right" id="question1-main" style="display: none;">
+                        <div class="upper" id="typing1">就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類</div>
+                        <div class="middle" id="middle1">
+                            <img src="./image/logo/beer.jpg" id="1" draggable="true" ondragstart="drag(event)" title="生啤酒" alt="生啤酒" />
+                            <img src="./image/logo/Polytec.jpg" id="2" draggable="true" ondragstart="drag(event)" title="保力達"" alt="保力達">
+                            <img src="./image/logo/Bubbledrink.png" id="3" draggable="true" ondragstart="drag(event)" title="氣泡飲料" alt="氣泡飲料" />
+                            <img src="./image/logo/ShochuChicken.jpg" id="4" draggable="true" ondragstart="drag(event)" title="燒酒雞" alt="燒酒雞" />
+                            <img src="./image/logo/Tincture.jpg" id="5" draggable="true" ondragstart="drag(event)" title="藥酒" alt="藥酒" />
+                            <img src="./image/logo/Refreshingdrink.jpg" id="6" draggable="true" ondragstart="drag(event)" title="提神飲料" alt="提神飲料" />
+                            <img src="./image/logo/ricewine.jpg" id="7" draggable="true" ondragstart="drag(event)" title="米酒" alt="米酒" />
+                            <img src="./image/logo/Lambstove.jpg" id="8" draggable="true" ondragstart="drag(event)" title="麻油雞" alt="麻油雞" />
                         </div>
-                        <div id ="second">
-                            <div class="second-first"></div>
-                            <div class="second" id='no' ondrop="drop(event, 'second')" ondragover="allowDrag(event, 'second')"><div class="text" style='display: none;'>別挑戰灰色地帶</div><img class="img" style='display: none;' src="./image/logo/fault.png" alt=""></div>
-                            <div class="second-third"></div>
-                        </div>   
-                        <div class="third" id ="third">
+                        <div class="down" id="question1">
+                            <div id="first" class="first">
+                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-4" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-5" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                                <div class="answer" id="first-6" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
+                            </div>
+                            <div id="second">
+                                <div class="second-first"></div>
+                                <div class="second" id="no" ondrop="drop(event, 'second')" ondragover="allowDrag(event, 'second')">
+                                    <div class="text" style="display: none;">別挑戰灰色地帶</div>
+                                    <img class="img" style="display: none;" src="./image/logo/fault.png" alt="" />
+                                </div>
+                                <div class="second-third"></div>
+                            </div>
+                            <div class="third" id="third">
                                 <div class="answer" id="third-1" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
                                 <div class="answer" id="third-2" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
                                 <div class="answer" id="third-3" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
                                 <div class="answer" id="third-4" ondrop="drop(event, 'third')" ondragover="allowDrag(event, 'third')"></div>
-                        </div>   
-                    </div>
-                    <div class="middle" id ="middle2" style="display: none;" >正確答案</div>
-                    <div class="down" id ="question2" style="display: none;">
-                        <div class="first">
-                            <div class="answer-box" >
-                                <div class="answer" ><img src="./image/logo/beer.jpg"   title="生啤酒" alt="生啤酒"></div>
-                                <div class="answer"><img src="./image/logo/Tincture.jpg"   title="藥酒" alt="藥酒"></div>
-                                <div class="answer" ><img src="./image/logo/ricewine.jpg"   title="米酒" alt="米酒"></div>
-                                <div class="answer" ><img src="./image/logo/Polytec.jpg"   title="保力達" alt="保力達"></div>
-                                <div class="answer" ><img src="./image/logo/ShochuChicken.png"   title="燒酒雞" alt="燒酒雞"></div>
-                                <div class="answer" ><img src="./image/logo/Lambstove.png"   title="麻油雞" alt="麻油雞"></div>
                             </div>
                         </div>
-                        <div class="second">
-                            <div class="second-first"></div>
-                            <div class="second"><div class="text" style='display: none;'></div></div>
-                            <div class="second-third"></div>
-                        </div>   
-                        <div class="third">
-                            <div class="answer-box" >
-                                <div class="answer" ><img src="./image/logo/Refreshingdrink.jpg"    title="提神飲料" alt="提神飲料" ></div>
-                                <div class="answer" ><img src="./image/logo/Bubbledrink.png"   title="氣泡飲料" alt="氣泡飲料"></div>
+                        <div class="middle" id="middle2" style="display: none;">正確答案</div>
+                        <div class="down" id="question2" style="display: none;">
+                            <div class="first">
+                                <div class="answer-box">
+                                    <div class="answer"><img src="./image/logo/beer.jpg" title="生啤酒" alt="生啤酒" /></div>
+                                    <div class="answer"><img src="./image/logo/Tincture.jpg" title="藥酒" alt="藥酒" /></div>
+                                    <div class="answer"><img src="./image/logo/ricewine.jpg" title="米酒" alt="米酒" /></div>
+                                    <div class="answer"><img src="./image/logo/Polytec.jpg" title="保力達" alt="保力達" /></div>
+                                    <div class="answer"><img src="./image/logo/ShochuChicken.jpg" title="燒酒雞" alt="燒酒雞" /></div>
+                                    <div class="answer"><img src="./image/logo/Lambstove.jpg" title="麻油雞" alt="麻油雞" /></div>
+                                </div>
                             </div>
-                        </div>               
-                    </div>
-                    <div class="send">
-                        <div class="btn" onclick="show()">了解答案</div>
-                        <a href="./section/section0.html"><div class="nextbtn">進入主畫面</div></a>
+                            <div class="second">
+                                <div class="second-first"></div>
+                                <div class="second"><div class="text" style="display: none;"></div></div>
+                                <div class="second-third"></div>
+                            </div>
+                            <div class="third">
+                                <div class="answer-box">
+                                    <div class="answer"><img src="./image/logo/Refreshingdrink.jpg" title="提神飲料" alt="提神飲料" /></div>
+                                    <div class="answer"><img src="./image/logo/Bubbledrink.png" title="氣泡飲料" alt="氣泡飲料" /></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="send">
+                            <div class="btn" onclick="show()">了解答案</div>
+                            <a href="./section/section0.html"><div class="nextbtn">進入主畫面</div></a>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-    <script>
-        var drunkBtn = document.querySelector("#drunk");
-        drunkBtn.addEventListener("click", function(e){
-           document.querySelector("#main-section").setAttribute("style", "display: none;");
-           document.querySelector("#drunk-section").setAttribute("style", "display: flex;");
-           var videoBtn = document.querySelector("#video1");
-           videoBtn.play();
-           checkMoviePause();
-        });
-    </script>
         <script>
-            var str = '就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類';
-    
-            // var str = '1'
+            var drunkBtn = document.querySelector("#drunk");
+            drunkBtn.addEventListener("click", function (e) {
+                document.querySelector("#main-section").setAttribute("style", "display: none;");
+                document.querySelector("#drunk-section").setAttribute("style", "display: flex;");
+                var videoBtn = document.querySelector("#video1");
+                videoBtn.play();
+                checkMoviePause();
+            });
+        </script>
+        <script>
+            var str = "就您了解，看看下列食物，哪些食用了就有酒駕之疑慮?請您點選圖案拖曳至下方紅色或綠色區域的方式歸類";
+
             var i = 0;
 
             var no = document.querySelector("#no");
-            no.addEventListener("mousemove", function(e){
-                // document.querySelector(".text").setAttribute("style", "display: block");
-            });
-            no.addEventListener("mouseout", function(e){
+            no.addEventListener("mouseout", function (e) {
                 document.querySelector(".text").setAttribute("style", "display: none");
                 document.querySelector(".img").setAttribute("style", "display: none");
             });
-    
+
             function typing() {
-                var divTyping = document.getElementById('typing1');
+                var divTyping = document.getElementById("typing1");
 
                 if (i <= str.length) {
-                    divTyping.innerHTML = str.slice(0, i++) + '_';
-                    setTimeout('typing()', 200); //遞歸調用
+                    divTyping.innerHTML = str.slice(0, i++) + "_";
+                    setTimeout("typing()", 200); //遞歸調用
                 } else {
                     divTyping.innerHTML = str; //結束打字,移除 _ 光標
                 }
             }
 
-            function playMusic(){
+            function playMusic() {
                 var audio = document.querySelector("audio");
-                    audio.play();
+                audio.play();
             }
-                function playPause() { 
-                    var myVideo = document.getElementById("video1"); 
-                    if (myVideo.paused) 
-                        myVideo.play(); 
-                    else 
-                        myVideo.pause(); 
-                } 
-    
-                function checkMoviePause(){
-                    setTimeout(function(){
-                        document.getElementById("video1").setAttribute('style', 'display: none');
-                        document.getElementById("question1-main").setAttribute('style', 'display:flex');
-                        typing();
-                        playMusic();
-                    }, 15000);
-                }
-    
-            function drag(event){
-                event.dataTransfer.setData('text', event.target.id);
+            function playPause() {
+                var myVideo = document.getElementById("video1");
+                if (myVideo.paused) myVideo.play();
+                else myVideo.pause();
             }
-    
-            function allowDrag(event, section){
+
+            function checkMoviePause() {
+                setTimeout(function () {
+                    document.getElementById("video1").setAttribute("style", "display: none");
+                    document.getElementById("question1-main").setAttribute("style", "display:flex");
+                    typing();
+                    playMusic();
+                }, 15000);
+            }
+
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+
+            function allowDrag(event, section) {
                 event.preventDefault();
-                if(section == "second"){
+                if (section == "second") {
                     document.querySelector(".text").setAttribute("style", "display: block");
                     document.querySelector(".img").setAttribute("style", "display: block");
                 }
             }
-    
-            function drop(event, section){
+
+            function drop(event, section) {
                 event.preventDefault();
                 document.querySelector(".text").setAttribute("style", "display: none");
                 document.querySelector(".img").setAttribute("style", "display: none");
-                if(section == "second"){
+                if (section == "second") {
                     document.querySelector(".text").setAttribute("style", "display: none");
                     document.querySelector(".img").setAttribute("style", "display: none");
-                }else{
-                    if(event.target.tagName == "DIV"){
-                    var data = event.dataTransfer.getData('text');
-                    img = document.getElementById(data);
-                    event.target.appendChild(img);
-                }else if(event.target.tagName == "IMG"){
-                    var data = event.dataTransfer.getData('text');
-                    var origin_parent = document.getElementById(data).parentElement;
-                    div = event.target.outerHTML;
-                    sectionDiv = event.target.parentElement;
-                    sectionImg = event.target;
-                    sectionDiv.innerHTML = "";
-                    origin_parent.appendChild(sectionImg);
-                    sectionDiv.appendChild(document.getElementById(data));
-                }
+                } else {
+                    if (event.target.tagName == "DIV") {
+                        var data = event.dataTransfer.getData("text");
+                        img = document.getElementById(data);
+                        event.target.appendChild(img);
+                    } else if (event.target.tagName == "IMG") {
+                        var data = event.dataTransfer.getData("text");
+                        var origin_parent = document.getElementById(data).parentElement;
+                        div = event.target.outerHTML;
+                        sectionDiv = event.target.parentElement;
+                        sectionImg = event.target;
+                        sectionDiv.innerHTML = "";
+                        origin_parent.appendChild(sectionImg);
+                        sectionDiv.appendChild(document.getElementById(data));
+                    }
                     document.querySelector(".btn").setAttribute("style", "display: block");
                 }
-
             }
-    
-            function show(){
-                // document.querySelector("#middle1").innerHTML = '<div class="urAnswer" >您的答案</div>';
-                // document.querySelector("#middle1").setAttribute("style", "height: 50px; line-height: 50px;");
+
+            function show() {
                 document.querySelector("#middle1").setAttribute("style", "display: none;");
                 document.querySelector("#question1").setAttribute("style", "display: none;");
-                // document.querySelector("#typing1").setAttribute("style", "display: none;");
                 document.querySelector("#question2").setAttribute("style", "display: flex;");
                 document.querySelector("#middle2").setAttribute("style", "display: flex;height: 50px; line-height: 50px; border-top: 1px solid gray");
                 document.querySelector(".btn").setAttribute("style", "display: none;");
-                document.querySelector(".nextbtn").setAttribute("style", "display: block;");  
+                document.querySelector(".nextbtn").setAttribute("style", "display: block;");
             }
-    
         </script>
-</body>
+    </body>
 </html>

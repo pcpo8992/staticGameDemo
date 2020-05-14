@@ -1,5 +1,4 @@
-
-#drunk-section .question1{
+#drunk-section .question1 {
     display: flex;
     flex-flow: row;
     width: 1000px;
@@ -8,7 +7,7 @@
     background-color: #fff;
 }
 
-#drunk-section .question1 .left{
+#drunk-section .question1 .left {
     width: 300px;
     height: 100%;
     display: flex;
@@ -19,7 +18,7 @@
     height: 420px;
 }
 
-#drunk-section .question1 #question1-main{
+#drunk-section .question1 #question1-main {
     width: 1000px;
     height: 100%;
     display: flex;
@@ -29,11 +28,11 @@
 #drunk-section #question1-main .upper {
     width: 100%;
     height: 120px;
-    color:black;
+    color: black;
     font-size: 2em;
 }
 
-#drunk-section #question1-main .middle{
+#drunk-section #question1-main .middle {
     width: 100%;
     height: 100px;
     text-align: center;
@@ -43,54 +42,56 @@
     justify-content: space-around;
 }
 
-#drunk-section .middle img{
+#drunk-section .middle img {
     height: 90px;
     cursor: grab;
 }
 
-#drunk-section .middle img:active{
+#drunk-section .middle img:active {
     cursor: grabbing;
 }
 
 #drunk-section #question1-main .down {
     width: 100%;
-    color:black;
+    color: black;
     display: flex;
     flex-direction: row;
 }
 
-#drunk-section .first,#drunk-section .second,#drunk-section .third{
+#drunk-section .first,
+#drunk-section .second,
+#drunk-section .third {
     display: flex;
     flex-flow: wrap;
 }
-.first img, .third img{
+.first img,
+.third img {
     height: 110px;
 }
 
-.second img{
+.second img {
     height: 70px;
 }
 
-.text{
+.text {
     line-height: 100px;
-    color:red;
+    color: red;
 }
 
-
-#drunk-section .first{
+#drunk-section .first {
     background-image: url("../image/logo/red.png");
     width: 314px;
     height: 250px;
     margin-left: 50px;
 }
 
-.second-first{
+.second-first {
     background-image: url("../image/logo/red.png");
     width: 274px;
     height: 70px;
 }
 
-#drunk-section .second{
+#drunk-section .second {
     background-image: url("../image/logo/gray.png");
     width: 274px;
     height: 177px;
@@ -99,23 +100,20 @@
     align-items: center;
 }
 
-
-#drunk-section .third{
+#drunk-section .third {
     background-image: url("../image/logo/green.png");
     width: 220px;
     height: 250px;
     margin-top: 70px;
 }
 
-.second-third{
+.second-third {
     background-image: url("../image/logo/green.png");
     width: 274px;
     height: 73px;
-
 }
 
-
-#drunk-section .send{
+#drunk-section .send {
     width: 100%;
     height: 70px;
     display: flex;
@@ -124,7 +122,7 @@
     align-items: center;
 }
 
-#drunk-section .answer-box{
+#drunk-section .answer-box {
     display: flex;
     flex-direction: row;
     width: 330px;
@@ -132,7 +130,7 @@
     justify-content: space-around;
 }
 
-#drunk-section .name{
+#drunk-section .name {
     width: 250px;
     height: 60px;
     line-height: 60px;
@@ -140,7 +138,7 @@
     font-size: 1em;
 }
 
-.answer{
+.answer {
     width: 100px;
     height: 120px;
     display: flex;
@@ -149,29 +147,28 @@
     overflow: hidden;
 }
 
-.first .name{
+.first .name {
     color: white;
 }
-.second .name{
+.second .name {
     border: 1px dashed gray;
     color: white;
     background-color: gray;
 }
 
-
-.second .answer{
+.second .answer {
     border: 1px dashed gray;
 }
- .third .name{
+.third .name {
     color: white;
- }
+}
 
-
-.answer img{
+.answer img {
     height: 110px;
 }
 
-.btn, .nextbtn{
+.btn,
+.nextbtn {
     width: 150px;
     height: 50px;
     background-color: rgb(20, 171, 231);
@@ -185,24 +182,20 @@
     display: none;
 }
 
-
-
-#drunk-section .question1 a{
+#drunk-section .question1 a {
     text-decoration: none;
     color: black;
 }
 
-#drunk-section .question1 a:hover{
+#drunk-section .question1 a:hover {
     text-decoration: none;
     color: black;
 }
 
-.svg{
+.svg {
     display: flex;
     flex-flow: row;
     justify-content: center;
     align-items: center;
     /* margin-left: 200px; */
 }
-
-

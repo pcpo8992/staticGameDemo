@@ -61,6 +61,12 @@ body {
     height: 150px;
 }
 
+.people img{
+    height: 450px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
 .main-index .start {
     color: #ffffff;
     height: 80px;
@@ -94,7 +100,7 @@ body {
 .container .people {
     width: 370px;
     height: 500px;
-    background-image: url("../image/lin2.png");
+    /* background-image: url("../image/lin2.png"); */
     background-repeat: no-repeat;
     background-size: contain;
     margin-top: 150px;

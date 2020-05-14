@@ -1,179 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/section3.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <title>特徵通-性別</title>
-</head>
-<body>
-<div class="container">
-  <audio >
-    <!-- <source src="horse.ogg" type="audio/ogg"> -->
-    <source src="../music/3.mp3" type="audio/mpeg">
-  <!-- Your browser does not support the audio element. -->
-  </audio>
-  <div class="little-container">
-      <div class="title">特徵通-性別</div>
-      <div class="img" onclick="showGame()" >
-        <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>案件男女性誰多？？</div>
-        <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
-    </div>
-      <div class="question1" style="display: none;">
-          <div class="left"><img src="../image/lin2.png" alt=""></div>
-          <div class="right" id="main">
-              <div class="upper" id="typing1"></div>
-              <div class="middle" id ="middle" style="display: none;"></div>
-              <div class="down" id ="question1" style="display: none;">
-                  <div class="libra" id="libra">
-                     <div class="people">          
-                        <div class="boy" id="boy" onclick="judge('boy')"></div>
-                        <div class="girl" id="girl" onclick="judge('girl')"></div>
-                      </div>
-                    <div class="bridge" id="bridge"><div class="sendbtn" id="sendbtn" onclick="send()">送出</div></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/section3min.css" />
+        <link rel="stylesheet" href="../css/animatemin.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <title>特徵通-性別</title>
+    </head>
+    <body>
+        <div class="container">
+            <audio>
+                <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                <source src="../music/3.mp3" type="audio/mpeg" />
+                <!-- Your browser does not support the audio element. -->
+            </audio>
+            <div class="little-container">
+                <div class="title">特徵通-性別</div>
+                <div class="img" onclick="showGame()">
+                    <div class="big-title animated fadeIn">你知道<span style="color: yellow;">「酒駕」</span>案件男女性誰多？？</div>
+                    <div class="btn animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
                 </div>
-                
-          </div>
-          <div class="send">
-            <div class="nextbtn info" onclick="showStatic()" style="display: none;">統計數據</div>
-            <a href="./section4.html"><div class="nextgame gray" style="display: none;" onclick="next()">下ㄧ關</div></a>
-        </div>
-      </div>
-  </div>
-  <div class="modal"  id="static" style='display: none;'>
-    <div class="modal-content">
-        <span class="close" id="staticclose">&times;</span>
-        <div class="big-title">統計小學堂</div>
-        <div class="statics">
-            <div class="left"><img src="../image/lin2.png" alt="老師"></div>
-            <div class="analysis">
-                <div class="text">近6年酒駕案件有罪者男女比例為12.1：1，男性酒駕累犯比率高於女性。</div>
-                <canvas id="Chart" width="700" height="300"></canvas>
+                <div class="question1" style="display: none;">
+                    <div class="left"><img src="../image/lin2.png" alt="" /></div>
+                    <div class="right" id="main">
+                        <div class="upper" id="typing1"></div>
+                        <div class="middle" id="middle" style="display: none;"></div>
+                        <div class="down" id="question1" style="display: none;">
+                            <div class="libra" id="libra">
+                                <div class="people">
+                                    <div class="boy" id="boy" onclick="judge('boy')"></div>
+                                    <div class="girl" id="girl" onclick="judge('girl')"></div>
+                                </div>
+                                <div class="bridge" id="bridge"><div class="sendbtn" id="sendbtn" onclick="send()">送出</div></div>
+                            </div>
+                        </div>
+                        <div class="send">
+                            <div class="nextbtn info" onclick="showStatic()" style="display: none;">統計數據</div>
+                            <a href="./section4.html"><div class="nextgame gray" style="display: none;" onclick="next()">下ㄧ關</div></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="static" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close" id="staticclose">&times;</span>
+                        <div class="big-title">統計小學堂</div>
+                        <div class="statics">
+                            <div class="left"><img src="../image/lin2.png" alt="老師" /></div>
+                            <div class="analysis">
+                                <div class="text">近6年酒駕案件有罪者男女比例為12.1：1，男性酒駕累犯比率高於女性。</div>
+                                <canvas id="Chart" width="700" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-
-<script>
-        var str = '那你猜猜，這些被判有罪的人中，男性多還是女性多？';
-        // 男女比例 12.1 : 1
-        var ctx = document.getElementById('Chart').getContext('2d');
-        var dataPie = {
+        <script>
+            var str = "那你猜猜，這些被判有罪的人中，男性多還是女性多？";
+            // 男女比例 12.1 : 1
+            var ctx = document.getElementById("Chart").getContext("2d");
+            var dataPie = {
                 datasets: [
-                  {
-                    data: [92.3, 7.7],
-                    backgroundColor:[
-                    'rgb(54, 163, 235)',
-                    'rgb(255, 99, 132)'
-                  ],
-              }],
-              labels: [
-                        '男性確定有罪比率(%)',
-                        '女性確定有罪比率(%)'
-                    ]
+                    {
+                        data: [92.3, 7.7],
+                        backgroundColor: ["rgb(54, 163, 235)", "rgb(255, 99, 132)"],
+                    },
+                ],
+                labels: ["男性確定有罪比率(%)", "女性確定有罪比率(%)"],
             };
-        var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: dataPie,
-            options: {
-                responsive: false,
-            }
-        });
-
-        // Get the <span> element that closes the modal
-        var rightclose = document.getElementById("staticclose");
-        var modalBtn = document.querySelectorAll(".modal-content");
-        // When the user clicks on the button, open the modal
-
-        // When the user clicks on <span> (x), close the modal
-        rightclose.onclick = function() {
-             var modal = document.querySelector(".modal");
-             modal.style.display = "none";
-        };
-        for(var j =0; j < modalBtn.length;j++){
-            modalBtn[j].addEventListener('click',function(){
-            document.getElementById("static").style.display = "none";
+            var myChart = new Chart(ctx, {
+                type: "doughnut",
+                data: dataPie,
+                options: {
+                    responsive: false,
+                },
             });
-        }
 
-        // 男性92.3 女性7.7
-        var i = 0;
-          // var str = 1
-        function typing() {
-            var divTyping = document.getElementById('typing1');
-            if (i <= str.length) {
-                divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 150); //遞歸調用
-                var people = document.querySelector(".left img");
-                if(i >= 2 && i <= 5 ){
-                    people.src = "../image/lin3.png";
-                }else if (i > 2 && i % 2 == 0 ){
-                    people.src = "../image/lin4.png";
-                }else if (i > 2 && i % 2 == 1 ){
-                    people.src = "../image/lin5.png";
+            // Get the <span> element that closes the modal
+            var rightclose = document.getElementById("staticclose");
+            var modalBtn = document.querySelectorAll(".modal-content");
+            // When the user clicks on the button, open the modal
+
+            // When the user clicks on <span> (x), close the modal
+            rightclose.onclick = function () {
+                var modal = document.querySelector(".modal");
+                modal.style.display = "none";
+            };
+            for (var j = 0; j < modalBtn.length; j++) {
+                modalBtn[j].addEventListener("click", function () {
+                    document.getElementById("static").style.display = "none";
+                });
+            }
+
+            // 男性92.3 女性7.7
+            var i = 0;
+            // var str = 1
+            function typing() {
+                var divTyping = document.getElementById("typing1");
+                if (i <= str.length) {
+                    divTyping.innerHTML = str.slice(0, i++) + "_";
+                    setTimeout("typing()", 150); //遞歸調用
+                    var people = document.querySelector(".left img");
+                    if (i >= 2 && i <= 5) {
+                        people.src = "../image/lin3.png";
+                    } else if (i > 2 && i % 2 == 0) {
+                        people.src = "../image/lin4.png";
+                    } else if (i > 2 && i % 2 == 1) {
+                        people.src = "../image/lin5.png";
+                    }
+                } else {
+                    divTyping.innerHTML = str; //結束打字,移除 _ 光標
+                    document.querySelector("#middle").setAttribute("style", "display:flex");
+                    document.querySelector("#question1").setAttribute("style", "display:flex");
                 }
-            } else {
-                divTyping.innerHTML = str; //結束打字,移除 _ 光標   
-                document.querySelector('#middle').setAttribute('style', 'display:flex');  
-                document.querySelector('#question1').setAttribute('style', 'display:flex');   
             }
-        }
-        function showGame(){
-            document.querySelector(".question1").setAttribute("style", "display: flex;");
-            document.querySelector(".img").setAttribute("style", "display: none;");
-            typing();
-            var audio = document.querySelector("audio");
-            audio.play();
-        }
-
-        function judge(sextype){
-            var sex = document.getElementById(sextype);
-            if (sextype == 'boy'){
-                document.getElementById("girl").classList.remove("circle");
-            }else{
-              document.getElementById("boy").classList.remove("circle");
+            function showGame() {
+                document.querySelector(".question1").setAttribute("style", "display: flex;");
+                document.querySelector(".img").setAttribute("style", "display: none;");
+                typing();
+                var audio = document.querySelector("audio");
+                audio.play();
             }
-            if (sex.classList.length > 1) {
-              sex.classList.remove("circle");
-            }else{
-              sex.classList.add("circle");
+
+            function judge(sextype) {
+                var sex = document.getElementById(sextype);
+                if (sextype == "boy") {
+                    document.getElementById("girl").classList.remove("circle");
+                } else {
+                    document.getElementById("boy").classList.remove("circle");
+                }
+                if (sex.classList.length > 1) {
+                    sex.classList.remove("circle");
+                } else {
+                    sex.classList.add("circle");
+                }
             }
-        }
 
-        function send(){
-          var send = document.getElementById("sendbtn");
-          var boy = document.getElementById("boy");
-          var girl = document.getElementById("girl");
+            function send() {
+                var send = document.getElementById("sendbtn");
+                var boy = document.getElementById("boy");
+                var girl = document.getElementById("girl");
 
-          if(boy.classList.length == 1 & girl.classList.length == 1){
-            document.querySelector('#middle').textContent = "請先選擇性別!"
-          }else{
-            if(boy.classList.length == 1){
-              document.querySelector('#middle').textContent = "答錯了，男性較多，男女比例 12.1 : 1";
-            }else{
-              document.querySelector('#middle').textContent = "答對了，男性較多，男女比例 12.1 : 1";
+                if ((boy.classList.length == 1) & (girl.classList.length == 1)) {
+                    document.querySelector("#middle").textContent = "請先選擇性別!";
+                } else {
+                    if (boy.classList.length == 1) {
+                        document.querySelector("#middle").textContent = "答錯了，男性較多，男女比例 12.1 : 1";
+                    } else {
+                        document.querySelector("#middle").textContent = "答對了，男性較多，男女比例 12.1 : 1";
+                    }
+                    var bridge = document.getElementById("bridge");
+                    var send = document.getElementById("sendbtn");
+                    bridge.setAttribute("style", "transform:rotate(5deg)");
+                    send.setAttribute("style", "transform:rotate(-5deg)");
+                    girl.setAttribute("style", "transform:translate(0, 40px)");
+                    boy.setAttribute("style", "transform:translate(0, -30px)");
+                    boy.classList.remove("circle");
+                    girl.classList.remove("circle");
+                    send.setAttribute("style", "display:none");
+                    document.querySelector(".nextgame").setAttribute("style", "display:block");
+                    document.querySelector(".nextbtn").setAttribute("style", "display:block");
+                }
             }
-            var bridge = document.getElementById("bridge");
-            var send = document.getElementById("sendbtn");
-            bridge.setAttribute("style", "transform:rotate(5deg)");
-            send.setAttribute("style", "transform:rotate(-5deg)");
-            girl.setAttribute("style", "transform:translate(0, 40px)")
-            boy.setAttribute("style", "transform:translate(0, -30px)")
-            boy.classList.remove("circle");
-            girl.classList.remove("circle");
-            send.setAttribute("style", "display:none");
-            document.querySelector(".nextgame").setAttribute("style", "display:block");
-            document.querySelector(".nextbtn").setAttribute("style", "display:block");
-          }
-        }
-        function showStatic(){
-            document.getElementById("static").style.display = 'block';
-        }
-</script>
-
-</body>
+            function showStatic() {
+                document.getElementById("static").style.display = "block";
+            }
+        </script>
+    </body>
 </html>

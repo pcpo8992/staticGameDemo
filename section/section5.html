@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/section5min.css" />
+        <link rel="stylesheet" href="../css/animatemin.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <title>刑度通</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/section5.css">
-    <link rel="stylesheet" href="../css/animate.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <title>刑度通</title>
-</head>
-
-<body>
-    <div class="container">
-        <audio >
-            <!-- <source src="horse.ogg" type="audio/ogg"> -->
-            <source src="../music/5.mp3" type="audio/mpeg">
-            <!-- Your browser does not support the audio element. -->
-        </audio>
-        <div class="little-container">
-            <div class="title">刑度通</div>
-            <div class="img" onclick="showGame()">
-                <div class="big-title  animated fadeIn">你知道<span style="color: yellow">「酒駕」</span>案件的刑度嗎？？</div>
-                <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
-            </div>
-            <div class="question1" style="display: none;">
-                <div class="left"><img src="../image/lin2.png" alt="老師"></div>
-                <div class="right" id="main">
-                    <div class="upper" id="typing1"></div>
-                    <div class="alert animated fadeIn">請先選擇刑度</div>
-                    <div class="alert2 animated fadeIn">你答對了嗎？正確答案如下</div>
-                    <div class="middle" id="middle">
-                        <img data-id='a' src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions">
-                        <img data-id='b' src="../image/BelowJune.svg" alt="BelowJune ">
-                        <img data-id='c' src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year ">
-                        <img data-id='d' src="../image/1to2.svg" alt="1to2">
-                        <img data-id='e' src="../image/2to5.svg" alt="2to5">
-                        <img data-id='f' src="../image/over5years.svg"  alt="over5years">
-                    </div>
-                    <div class="middle" id="middle2" style="display: none;">
-                        <img data-id='a' src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions">
-                        <img data-id='b' src="../image/BelowJune.svg" alt="BelowJune ">
-                        <img data-id='c' src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year ">
-                        <img data-id='d' src="../image/1to2.svg" alt="1to2">
-                        <img data-id='e' src="../image/2to5.svg" alt="2to5">
-                        <img data-id='f' src="../image/over5years.svg"  alt="over5years">
-                    </div>
-                    <div class="pic" style='height: 200px;width: 700px;'></div>
-                    <div class="picAnswer" style='height: 200px;width: 700px; display: none;'></div>
-                    <div class="down" id="question1">
-                        <div data-item='1' class='btn-game color1'>一般酒駕</div>
-                        <div data-item='2' class='btn-game color2'>酒駕致死或致重傷</div>
-                    </div>
-                    <div class="down" id="question2" style="display:  none;">
-                        <div data-item='1' class='btn-game2 color1'>一般酒駕</div>
-                        <div data-item='2' class='btn-game2 color2'>酒駕致死或致重傷</div>
-                    </div>
-                    <div class="send">
-                        <div class="sendbtn blue" onclick="reDraw()">觀看答案</div>
-                        <div class="sendbtn info" onclick="showStatic()">統計數據</div>
-                        <a href="../index.html"><div class="nextbtn gray">回到首頁</div></a>
+    <body>
+        <div class="container">
+            <audio>
+                <!-- <source src="horse.ogg" type="audio/ogg"> -->
+                <source src="../music/5.mp3" type="audio/mpeg" />
+                <!-- Your browser does not support the audio element. -->
+            </audio>
+            <div class="little-container">
+                <div class="title">刑度通</div>
+                <div class="img" onclick="showGame()">
+                    <div class="big-title animated fadeIn">你知道<span style="color: yellow;">「酒駕」</span>案件的刑度嗎？？</div>
+                    <div class="btn animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
+                </div>
+                <div class="question1" style="display: none;">
+                    <div class="left"><img src="../image/lin2.png" alt="老師" /></div>
+                    <div class="right" id="main">
+                        <div class="upper" id="typing1"></div>
+                        <div class="alert animated fadeIn">請先選擇刑度</div>
+                        <div class="alert2 animated fadeIn">你答對了嗎？正確答案如下</div>
+                        <div class="middle" id="middle">
+                            <img data-id="a" src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions" />
+                            <img data-id="b" src="../image/BelowJune.svg" alt="BelowJune " />
+                            <img data-id="c" src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year " />
+                            <img data-id="d" src="../image/1to2.svg" alt="1to2" />
+                            <img data-id="e" src="../image/2to5.svg" alt="2to5" />
+                            <img data-id="f" src="../image/over5years.svg" alt="over5years" />
+                        </div>
+                        <div class="middle" id="middle2" style="display: none;">
+                            <img data-id="a" src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions" />
+                            <img data-id="b" src="../image/BelowJune.svg" alt="BelowJune " />
+                            <img data-id="c" src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year " />
+                            <img data-id="d" src="../image/1to2.svg" alt="1to2" />
+                            <img data-id="e" src="../image/2to5.svg" alt="2to5" />
+                            <img data-id="f" src="../image/over5years.svg" alt="over5years" />
+                        </div>
+                        <div class="pic" style="height: 200px; width: 700px;"></div>
+                        <div class="picAnswer" style="height: 200px; width: 700px; display: none;"></div>
+                        <div class="down" id="question1">
+                            <div data-item="1" class="btn-game color1">一般酒駕</div>
+                            <div data-item="2" class="btn-game color2">酒駕致死或致重傷</div>
+                        </div>
+                        <div class="down" id="question2" style="display: none;">
+                            <div data-item="1" class="btn-game2 color1">一般酒駕</div>
+                            <div data-item="2" class="btn-game2 color2">酒駕致死或致重傷</div>
+                        </div>
+                        <div class="send">
+                            <div class="sendbtn blue" onclick="reDraw()">觀看答案</div>
+                            <div class="sendbtn info" onclick="showStatic()">統計數據</div>
+                            <a href="../index.html"><div class="nextbtn gray">回到首頁</div></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal"  id="static" style='display: none;'>
-                <div class="modal-content">
-                    <span class="close" id="rightclose">&times;</span>
-                    <div class="big-title">統計小學堂</div>
-                    <div class="statics">
-                        <div class="left"><img src="../image/lin2.png" alt="老師"></div>
-                        <div class="analysis">
-                            <div class="text">近6年酒駕案件有罪者主要為<span class='red'>一般酒駕(占99.8%)</span>，以判處六月以下有期徒刑(占96.9%)最多，平均刑度為3.3個月；<span class='red'>酒駕致死或致重傷(占0.2%)</span>，以判處一年以上至二年未滿(占43.8%)最多，平均刑度為27.0個月。</div>
-                            <canvas id="Chart" width="700" height="300"></canvas>
+                <div class="modal" id="static" style="display: none;">
+                    <div class="modal-content">
+                        <span class="close" id="rightclose">&times;</span>
+                        <div class="big-title">統計小學堂</div>
+                        <div class="statics">
+                            <div class="left"><img src="../image/lin2.png" alt="老師" /></div>
+                            <div class="analysis">
+                                <div class="text">
+                                    近6年酒駕案件有罪者主要為<span class="red">一般酒駕(占99.8%)</span>，以判處六月以下有期徒刑(占96.9%)最多，平均刑度為3.3個月；
+                                    <span class="red">酒駕致死或致重傷(占0.2%)</span>，以判處一年以上至二年未滿(占43.8%)最多，平均刑度為27.0個月。
+                                </div>
+                                <canvas id="Chart" width="700" height="300"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="../js/svg.js"></script>
-</body>
+        <script src="../js/svg.js"></script>
+    </body>
 </html>
