@@ -204,3 +204,9 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+
+  .formula{
+    color: yellow;
+    font-size: 1.2em;
+    margin-top: 100px;
+  }

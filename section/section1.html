@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/section1.css">
     <link rel="stylesheet" href="../css/animate.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>酒駕情境體驗</title>
 </head>
 
@@ -28,21 +29,6 @@
                 <div class="right flex-right">
                     <div class="right" id="main">
                         <div class="upper" id="typing1"></div>
-                        <!-- <div class="middle" id ="middle" style="display: none;">請選擇</div> -->
-                        <!-- <div class="down" id ="question1" style="display: none;">
-                            <div class="set1">
-                                <div class="set-title">一般酒駕</div>
-                                <div class="out-circle">
-                                    <div class="inner-circle" onclick="chooseQuestoin(1)"></div>
-                                </div>
-                            </div>
-                            <div class="set2">
-                                <div class="set-title">酒駕致死或致重傷</div>
-                                <div class="out-circle">
-                                    <div class="inner-circle" onclick="chooseQuestoin(2)"></div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                     <div class="right"  id='section1' style="display: none;" >
                         <!-- <div class="upper"><img src="../image/drink.png" alt=""></div> -->
@@ -105,7 +91,7 @@
                                 <div class="down-q">50-59%</div>
                             </div>
                             <div class="down-circle">
-                                <div class="down-c"><div class="down-c-l"></div></div>
+                                <div class="down-c"><div class="down-c-l" style="width:15px; height: 15px; border-radius: 50%;background-color: #3DB1ff;;"></div></div>
                                 <div class="down-q">60-69%</div>
                             </div>
                             <div class="down-circle">
@@ -117,11 +103,14 @@
                                 <div class="down-q">80-89%</div>
                             </div>
                             <div class="down-circle right">
-                                <div class="down-c"><div class="down-c-l" style="width:15px; height: 15px; border-radius: 50%;background-color: #3DB1ff;;"></div></div>
+                                <div class="down-c"><div class="down-c-l"></div></div>
                                 <div class="down-q">90%以上</div>
                             </div>
                         </div>
-                        <a href="./section2.html"><div class="nextbtn" style="display: none;" onclick="next()">下ㄧ關</div></a>
+                        <div class="send">
+                            <div class="sendbtn info" onclick="showStatic()">統計數據</div>
+                            <a href="./section2.html"><div class="nextbtn gray" style="display: none;" onclick="next()">下ㄧ關</div></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,13 +127,64 @@
                     <p class="right"><i class="far fa-thumbs-up"></i>      答對了</p>
                   </div>
             </div>
-            <!-- <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a> -->
+            <div class="modal"  id="static" style='display: none;'>
+                <div class="modal-content">
+                    <span class="close" id="staticclose">&times;</span>
+                    <div class="big-title">統計小學堂</div>
+                    <div class="statics">
+                        <div class="left"><img src="../image/lin2.png" alt="老師"></div>
+                        <div class="analysis">
+                            <div class="text">近6年酒駕案件偵查終結50萬5,578人，以聲請簡易判決處刑占62.5%最多(高於全般刑案之19.9%)，其次為緩起訴處分占27.7%</div>
+                            <canvas id="Chart" width="700" height="300"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
         var str = '某一晚的下班，我跟好馬吉小林吃飯，途中大家開心喝了幾杯，吃完要回家時，他竟然要開車回家，聰明的你，可以幫我跟小林說現在起訴比率有多高嗎？';
         var i = 0;
+
+        var ctx = document.getElementById('Chart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['103年', '104年', '105年', '106年', '107年', '108年'],
+                datasets: [{
+                    label: '酒駕起訴比率',
+                    data: [60.2, 62.5, 63.2, 64.2, 63.2, 62.0],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                responsive: false,
+            }
+        });
 
 
         function typing() {
@@ -158,9 +198,9 @@
                 var people = document.querySelector(".left img");
                 if(i >= 2 && i <= 5 ){
                     people.src = "../image/lin3.png";
-                }else if (i > 2 && i % 2 == 0 ){
+                }else if (i > 5 && i % 2 == 0 ){
                     people.src = "../image/lin4.png";
-                }else if (i > 2 && i % 2 == 1 ){
+                }else if (i > 5 && i % 2 == 1 ){
                     people.src = "../image/lin5.png";
                 }
             } else  {
@@ -172,7 +212,7 @@
         function answer(num ,answer){
              // Get the modal
              if(num == 1){
-                if(answer == "two-5"){
+                if(answer == "two-2"){
                     var modal = document.getElementById("right");
                     modal.style.display = "block";
                     document.getElementById("section3").style.display = 'block';
@@ -227,6 +267,7 @@
             modalBtn[j].addEventListener('click',function(){
             document.getElementById("right").style.display = "none";
             document.getElementById("fault").style.display = "none";
+            document.getElementById("static").style.display = "none";
             });
         }
         
@@ -254,6 +295,10 @@
             modal.style.display = "none";
             document.getElementById("section3").style.display = 'block';
             document.querySelector("#section3 .nextbtn").setAttribute("style", "display:block;");
+        }
+
+        function showStatic(){
+            document.getElementById("static").style.display = 'block';
         }
 
         

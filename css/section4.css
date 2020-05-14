@@ -156,6 +156,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: none;
+    margin-left: 10px;
 }
 
 .sendbtn :hover{
@@ -223,4 +224,69 @@ body {
   .clickbtn{
       display: flex;
       flex-flow: row;
+  }
+
+  .blue{
+    border: 1px solid #007bff;
+    background-color: #007bff;
+}
+
+.info{
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.gray{
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+
+#static{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#static .modal-content {
+    background-color: #fefefe;
+    margin: 5%; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    /* height: 80%; */
+    width: 90%;
+    text-align: center;
+  }
+
+  #static  .modal-content .statics{
+    display: flex;
+    padding: 30px;
+  }
+
+  .big-title{
+      font-size: 1.5em;
+      font-weight: bold;
+  }
+
+  .analysis{
+      width: 80%;
+      
+      /* border: 1px solid red; */
+      padding: 20px;
+  }
+
+  .analysis .text{
+      width: 700px;
+      height: 100px;
+      line-height: 30px;
+      text-align:justify;
+      border: 1px dashed red;
+      font-size: 1.1em;
+      letter-spacing: 3px;
+
   }

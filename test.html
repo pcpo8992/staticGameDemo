@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+
+        #stroke, #clear{
+            width: 200px;
+            height: 20px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="test" width='300' height="300">
+    </canvas>
+    <div id='stroke'>123</div>
+    <div id='clear'>456</div>
+    <script>
+        var canvas = document.getElementById("test");
+
+
+        var btn = document.getElementById("stroke");
+        btn.onclick = click;
+        var clearBtn = document.getElementById("clear");
+        clearBtn.onclick = clear;
+
+        
+        if(canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "rgb(200, 0, 0)";
+            ctx.fillRect(5, 10, 10, 10);
+            ctx.fillRect(50, 10, 10, 10);
+            ctx.fillRect(100, 10, 10, 10);
+            ctx.fillRect(15, 100, 10, 10);
+            ctx.fillRect(85, 100, 10, 10);
+            ctx.save();
+
+
+
+        }else{
+            console.log("no support !!");
+        }
+
+        function click(){
+            console.log('123');
+            var canvas = document.getElementById("test");
+            var ctx = canvas.getContext('2d');
+            // ctx.save();
+            ctx.beginPath();
+            ctx.moveTo(10, 20);
+            ctx.lineTo(20, 100);
+            ctx.stroke();
+        }
+
+        function clear(){
+            var canvas = document.getElementById("test");
+            var ctx = canvas.getContext('2d');
+            ctx.restore();
+        }
+    </script>
+</body>
+</html>

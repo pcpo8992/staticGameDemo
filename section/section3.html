@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../css/section3.css">
     <link rel="stylesheet" href="../css/animate.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>特徵通-性別</title>
 </head>
 <body>
@@ -36,13 +37,70 @@
                 </div>
                 
           </div>
-          <a href="section4.html"><div class=" nextgame" style="display:none" >下一關</div></a>
+          <div class="send">
+            <div class="nextbtn info" onclick="showStatic()" style="display: none;">統計數據</div>
+            <a href="./section4.html"><div class="nextgame gray" style="display: none;" onclick="next()">下ㄧ關</div></a>
+        </div>
       </div>
   </div>
+  <div class="modal"  id="static" style='display: none;'>
+    <div class="modal-content">
+        <span class="close" id="staticclose">&times;</span>
+        <div class="big-title">統計小學堂</div>
+        <div class="statics">
+            <div class="left"><img src="../image/lin2.png" alt="老師"></div>
+            <div class="analysis">
+                <div class="text">近6年酒駕案件有罪者男女比例為12.1：1，男性酒駕累犯比率高於女性。</div>
+                <canvas id="Chart" width="700" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <script>
         var str = '那你猜猜，這些被判有罪的人中，男性多還是女性多？';
+        // 男女比例 12.1 : 1
+        var ctx = document.getElementById('Chart').getContext('2d');
+        var dataPie = {
+                datasets: [
+                  {
+                    data: [92.3, 7.7],
+                    backgroundColor:[
+                    'rgb(54, 163, 235)',
+                    'rgb(255, 99, 132)'
+                  ],
+              }],
+              labels: [
+                        '男性確定有罪比率(%)',
+                        '女性確定有罪比率(%)'
+                    ]
+            };
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: dataPie,
+            options: {
+                responsive: false,
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var rightclose = document.getElementById("staticclose");
+        var modalBtn = document.querySelectorAll(".modal-content");
+        // When the user clicks on the button, open the modal
+
+        // When the user clicks on <span> (x), close the modal
+        rightclose.onclick = function() {
+             var modal = document.querySelector(".modal");
+             modal.style.display = "none";
+        };
+        for(var j =0; j < modalBtn.length;j++){
+            modalBtn[j].addEventListener('click',function(){
+            document.getElementById("static").style.display = "none";
+            });
+        }
+
+        // 男性92.3 女性7.7
         var i = 0;
           // var str = 1
         function typing() {
@@ -92,13 +150,12 @@
           var girl = document.getElementById("girl");
 
           if(boy.classList.length == 1 & girl.classList.length == 1){
-            // alert("");
             document.querySelector('#middle').textContent = "請先選擇性別!"
           }else{
             if(boy.classList.length == 1){
-              document.querySelector('#middle').textContent = "答錯了，男性比較多70%";
+              document.querySelector('#middle').textContent = "答錯了，男性較多，男女比例 12.1 : 1";
             }else{
-              document.querySelector('#middle').textContent = "答對了，男性比較多70%";
+              document.querySelector('#middle').textContent = "答對了，男性較多，男女比例 12.1 : 1";
             }
             var bridge = document.getElementById("bridge");
             var send = document.getElementById("sendbtn");
@@ -110,8 +167,11 @@
             girl.classList.remove("circle");
             send.setAttribute("style", "display:none");
             document.querySelector(".nextgame").setAttribute("style", "display:block");
-            
+            document.querySelector(".nextbtn").setAttribute("style", "display:block");
           }
+        }
+        function showStatic(){
+            document.getElementById("static").style.display = 'block';
         }
 </script>
 

@@ -2,7 +2,6 @@
 #drunk-section .question1{
     display: flex;
     flex-flow: row;
-    /* border: 1px solid red; */
     width: 1000px;
     height: 500px;
     margin-top: 70px;
@@ -12,43 +11,31 @@
 #drunk-section .question1 .left{
     width: 300px;
     height: 100%;
-    /* width: 50px; */
-    /* border: 1px solid red; */
     display: flex;
-    /* justify-content: end; */
     align-items: flex-end;
 }
 
 #drunk-section .left img {
     height: 420px;
-    /* border: 1px solid red; */
 }
 
 #drunk-section .question1 #question1-main{
     width: 1000px;
     height: 100%;
-    /* width: 50px; */
-    /* border: 1px solid red; */
     display: flex;
-    /* justify-content: end; */
     flex-flow: column;
 }
 
 #drunk-section #question1-main .upper {
-    /* border: 1px solid red; */
     width: 100%;
     height: 120px;
-    /* line-height: 280px; */
     color:black;
     font-size: 2em;
-    /* text-align: center; */
 }
 
 #drunk-section #question1-main .middle{
     width: 100%;
-    /* border: 1px solid red; */
     height: 100px;
-    /* line-height: 100px; */
     text-align: center;
     font-size: 1.5em;
     font-weight: bold;
@@ -58,33 +45,77 @@
 
 #drunk-section .middle img{
     height: 90px;
+    cursor: grab;
+}
+
+#drunk-section .middle img:active{
+    cursor: grabbing;
 }
 
 #drunk-section #question1-main .down {
-    /* border: 1px solid red; */
     width: 100%;
-    /* height: 200px; */
     color:black;
     display: flex;
-    /* flex-flow: column; */
     flex-direction: row;
-
-
 }
 
-#drunk-section .first, .second, .third{
+#drunk-section .first,#drunk-section .second,#drunk-section .third{
     display: flex;
-    flex-grow: row;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 1px solid red ; */
-    /* padding: 3px; */
-    margin-top: 10px;
+    flex-flow: wrap;
 }
+.first img, .third img{
+    height: 110px;
+}
+
+.second img{
+    height: 70px;
+}
+
+.text{
+    line-height: 100px;
+    color:red;
+}
+
+
+#drunk-section .first{
+    background-image: url("../image/logo/red.png");
+    width: 314px;
+    height: 250px;
+    margin-left: 50px;
+}
+
+.second-first{
+    background-image: url("../image/logo/red.png");
+    width: 274px;
+    height: 70px;
+}
+
+#drunk-section .second{
+    background-image: url("../image/logo/gray.png");
+    width: 274px;
+    height: 177px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#drunk-section .third{
+    background-image: url("../image/logo/green.png");
+    width: 220px;
+    height: 250px;
+    margin-top: 70px;
+}
+
+.second-third{
+    background-image: url("../image/logo/green.png");
+    width: 274px;
+    height: 73px;
+
+}
+
 
 #drunk-section .send{
-    /* border: 1px solid red; */
     width: 100%;
     height: 70px;
     display: flex;
@@ -96,7 +127,6 @@
 #drunk-section .answer-box{
     display: flex;
     flex-direction: row;
-    /* border: 1px solid red; */
     width: 330px;
     flex-flow: wrap;
     justify-content: space-around;
@@ -108,29 +138,19 @@
     line-height: 60px;
     text-align: center;
     font-size: 1em;
-    /* border: 1px solid red; */
-    /* background-color: rgb(173, 107, 107); */
 }
-
-
 
 .answer{
     width: 100px;
     height: 120px;
-    
     display: flex;
     justify-content: space-around;
     margin: 2px;
     overflow: hidden;
 }
 
-.first .answer{
-    border: 1px dashed red;
-}
 .first .name{
-    /* border: 1px dashed red; */
     color: white;
-    background-color: red;
 }
 .second .name{
     border: 1px dashed gray;
@@ -143,25 +163,17 @@
     border: 1px dashed gray;
 }
  .third .name{
-    border: 1px dashed green;
     color: white;
-    background-color: green;
  }
 
-.third .answer{
-    border: 1px dashed green;
-}
 
 .answer img{
-    /* width: 60px; */
     height: 110px;
-    /* overflow: scroll; */
 }
 
 .btn, .nextbtn{
     width: 150px;
     height: 50px;
-    /* border: 1px solid blue; */
     background-color: rgb(20, 171, 231);
     color: #fff;
     border-radius: 10px;

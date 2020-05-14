@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/section5.css">
     <link rel="stylesheet" href="../css/animate.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <title>刑度通</title>
 </head>
 
@@ -24,241 +26,59 @@
                 <div class="btn  animated fadeIn"><i class="fas fa-gavel rotate"></i>進入遊戲</div>
             </div>
             <div class="question1" style="display: none;">
-                <div class="left"><img src="../image/lin2.png" alt=""></div>
+                <div class="left"><img src="../image/lin2.png" alt="老師"></div>
                 <div class="right" id="main">
                     <div class="upper" id="typing1"></div>
+                    <div class="alert animated fadeIn">請先選擇刑度</div>
+                    <div class="alert2 animated fadeIn">你答對了嗎？正確答案如下</div>
                     <div class="middle" id="middle">
-                        <img src="../image/Detentionfinesandexemptions.svg" id="1" draggable="true" ondragstart="drag(event)" alt="Detentionfinesandexemptions">
-                        <img src="../image/BelowJune.svg" id="2" draggable="true " ondragstart="drag(event) "  alt="BelowJune ">
-                        <img src="../image/MorethanJunetolessthan1year.svg "  id="3" draggable="true " ondragstart="drag(event) " alt="MorethanJunetolessthan1year ">
-                        <img src="../image/1to2.svg "  id="4" draggable="true" ondragstart="drag(event)" alt="1to2">
-                        <img src="../image/2to5.svg" id="5" draggable="true" ondragstart="drag(event)" alt="2to5">
-                        <img src="../image/over5years.svg" id="6" draggable="true" ondragstart="drag(event)" alt="over5years">
+                        <img data-id='a' src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions">
+                        <img data-id='b' src="../image/BelowJune.svg" alt="BelowJune ">
+                        <img data-id='c' src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year ">
+                        <img data-id='d' src="../image/1to2.svg" alt="1to2">
+                        <img data-id='e' src="../image/2to5.svg" alt="2to5">
+                        <img data-id='f' src="../image/over5years.svg"  alt="over5years">
                     </div>
+                    <div class="middle" id="middle2" style="display: none;">
+                        <img data-id='a' src="../image/Detentionfinesandexemptions.svg" alt="Detentionfinesandexemptions">
+                        <img data-id='b' src="../image/BelowJune.svg" alt="BelowJune ">
+                        <img data-id='c' src="../image/MorethanJunetolessthan1year.svg" alt="MorethanJunetolessthan1year ">
+                        <img data-id='d' src="../image/1to2.svg" alt="1to2">
+                        <img data-id='e' src="../image/2to5.svg" alt="2to5">
+                        <img data-id='f' src="../image/over5years.svg"  alt="over5years">
+                    </div>
+                    <div class="pic" style='height: 200px;width: 700px;'></div>
+                    <div class="picAnswer" style='height: 200px;width: 700px; display: none;'></div>
                     <div class="down" id="question1">
-                        <div class="first">
-                            <div class="name">一般酒駕:</div>
-                            <div class="answer-box" id="first">
-                                <div class="answer" id="first-1" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                                <div class="answer" id="first-2" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                                <div class="answer" id="first-3" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                                <div class="answer" id="first-4" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                                <div class="answer" id="first-5" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                                <div class="answer" id="first-6" ondrop="drop(event, 'first')" ondragover="allowDrag(event, 'first')"></div>
-                            </div>
-                        </div>
-                        <div class="second">
-                            <div class="name">酒駕致死或致重傷:</div>
-                            <div class="answer-box" id="second">
-                                <div class="answer" id="second-1" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                                <div class="answer" id="second-2" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                                <div class="answer" id="second-3" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                                <div class="answer" id="second-4" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                                <div class="answer" id="second-5" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                                <div class="answer" id="second-6" ondrop="drop(event ,'second')" ondragover="allowDrag(event ,'second')"></div>
-                            </div>
-                        </div>
+                        <div data-item='1' class='btn-game color1'>一般酒駕</div>
+                        <div data-item='2' class='btn-game color2'>酒駕致死或致重傷</div>
                     </div>
-                    <div class="down" id="question2" style="display: none;">
-                        <div class="first">
-                            <div class="name">一般酒駕:</div>
-                            <div class="answer-box">
-                                <div class="answer"><img src="../image/Detentionfinesandexemptions.svg"  alt="Detentionfinesandexemptions"></div>
-                                <div class="answer"><img src="../image/BelowJune.svg"  alt="BelowJune"></div>
-                                <div class="answer"><img src="../image/MorethanJunetolessthan1year.svg"  alt="MorethanJunetolessthan1year"></div>
-                            </div>
-                        </div>
-                        <div class="second">
-                            <div class="name">酒駕致死或致重傷:</div>
-                            <div class="answer-box">
-                                <div class="answer"><img src="../image/1to2.svg"  alt="1to2"></div>
-                                <div class="answer"><img src="../image/2to5.svg"  alt="2to5"></div>
-                                <div class="answer"><img src="../image/over5years.svg"  alt="over5years"></div>
-                            </div>
-                        </div>
+                    <div class="down" id="question2" style="display:  none;">
+                        <div data-item='1' class='btn-game2 color1'>一般酒駕</div>
+                        <div data-item='2' class='btn-game2 color2'>酒駕致死或致重傷</div>
                     </div>
                     <div class="send">
-                        <div class="sendbtn" onclick="show()">送出答案</div>
-                        <a href="../index.html"><div class="nextbtn">回到首頁</div></a>
+                        <div class="sendbtn blue" onclick="reDraw()">觀看答案</div>
+                        <div class="sendbtn info" onclick="showStatic()">統計數據</div>
+                        <a href="../index.html"><div class="nextbtn gray">回到首頁</div></a>
                     </div>
                 </div>
             </div>
-            <div class="modal" style="display: none;" id="fault">
-                <div class="modal-content">
-                    <span class="close" id="faultclose">&times;</span>
-                    <p class="fault"><i class="fas fa-times"></i> 答錯囉</p>
-                    <div onclick="showAnswer()" class='watch-answer'>看解答</div>
-                </div>
-            </div>
-            <div class="modal" style="display: none;" id="right">
+            <div class="modal"  id="static" style='display: none;'>
                 <div class="modal-content">
                     <span class="close" id="rightclose">&times;</span>
-                    <p class="right"><i class="far fa-thumbs-up"></i> 答對了</p>
+                    <div class="big-title">統計小學堂</div>
+                    <div class="statics">
+                        <div class="left"><img src="../image/lin2.png" alt="老師"></div>
+                        <div class="analysis">
+                            <div class="text">近6年酒駕案件有罪者主要為<span class='red'>一般酒駕(占99.8%)</span>，以判處六月以下有期徒刑(占96.9%)最多，平均刑度為3.3個月；<span class='red'>酒駕致死或致重傷(占0.2%)</span>，以判處一年以上至二年未滿(占43.8%)最多，平均刑度為27.0個月。</div>
+                            <canvas id="Chart" width="700" height="300"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- <a href="./section2.html" id="next" style="display: none;" class="next">下一關</a> -->
         </div>
     </div>
-
-    <script>
-        var str = '你覺得會判刑多重？(請將刑度拖曳至下方區塊)';
-        // var str = '1'
-        var i = 0;
-
-        // Get the <span> element that closes the modal
-        var rightclose = document.getElementById("rightclose");
-        var faultclose = document.getElementById("faultclose");
-        var modalBtn = document.querySelectorAll(".modal-content");
-
-        // When the user clicks on the button, open the modal
-
-        // When the user clicks on <span> (x), close the modal
-        rightclose.onclick = function() {
-            var modal = document.getElementById("right");
-            modal.style.display = "none";
-        };
-        faultclose.onclick = function() {
-            var modal = document.getElementById("fault");
-            modal.style.display = "none";
-        };
-
-
-        for(var j =0; j < modalBtn.length;j++){
-            modalBtn[j].addEventListener('click',function(){
-            document.getElementById("right").style.display = "none";
-            document.getElementById("fault").style.display = "none";
-            });
-        }
-
-        window.onclick = function(event) {
-            var right = document.getElementById("right");
-            var fault = document.getElementById("fault");
-            if (event.target == right) {
-                right.style.display = "none";
-            }
-            if (event.target == fault) {
-                fault.style.display = "none";
-            }
-        }
-
-        function typing() {
-            var divTyping = document.getElementById('typing1');
-            if (i <= str.length) {
-                divTyping.innerHTML = str.slice(0, i++) + '_';
-                setTimeout('typing()', 150); //遞歸調用
-                var people = document.querySelector(".left img");
-                if (i >= 2 && i <= 5) {
-                    people.src = "../image/lin3.png";
-                } else if (i > 2 && i % 2 == 0) {
-                    people.src = "../image/lin4.png";
-                } else if (i > 2 && i % 2 == 1) {
-                    people.src = "../image/lin5.png";
-                }
-            } else {
-                divTyping.innerHTML = str; //結束打字,移除 _ 光標
-                // document.getElementById('next').setAttribute('style', 'display:block');
-                // document.getElementById("question1").setAttribute('style', 'display:flex');
-                // document.getElementById("middle").setAttribute('style', 'display:block');
-            }
-        }
-        function showGame() {
-            document.querySelector(".question1").setAttribute("style", "display: flex;");
-            document.querySelector(".img").setAttribute("style", "display: none;");
-            typing();
-            var audio = document.querySelector("audio");
-            audio.play();
-        }
-
-        function show() {
-            var rightAnswer = {
-                'firstSection': ['1','4','5'],
-                'secondSection': ['2','3','6']
-            };
-            var guessAnswer = {
-                'firstSection': [],
-                'secondSection': [],
-            };
-
-            guessAnswer['firstSection'] = findCorrectSolution('first', guessAnswer['firstSection']);
-            guessAnswer['secondSection'] = findCorrectSolution('second', guessAnswer['secondSection']);
-            console.log(guessAnswer['firstSection'].toString());
-            console.log(guessAnswer['secondSection'].toString());
-            console.log(rightAnswer['firstSection'].toString());
-            console.log(rightAnswer['secondSection'].toString());
-
-            if (guessAnswer['firstSection'].toString() == rightAnswer['firstSection'].toString()  & guessAnswer['secondSection'].toString()  == rightAnswer['secondSection'].toString() ) {
-                showModal("right");
-                showAnswer();
-            } else {
-                showModal("fault");
-            }
-        }
-
-        function findCorrectSolution(section, rightAnswer) {
-            var firstBox = document.querySelector("#" + section).children;
-            for (var i = 0; i <= 5; i++) {
-                if (firstBox[i].firstElementChild !== null) {
-                    var id = firstBox[i].firstElementChild.id;
-                    rightAnswer.push(id);
-                }
-            }
-            return rightAnswer.sort();
-        }
-
-        function showModal(status) {
-            document.querySelector("#" + status).setAttribute("style", "display:block");
-            // document.querySelector(".nextbtn").setAttribute("style", "display: block");
-        }
-
-        function drag(event) {
-            event.dataTransfer.setData('text', event.target.id);
-        }
-
-        function allowDrag(event, section) {
-            event.preventDefault();
-        }
-
-        function drop(event, section) {
-            event.preventDefault();
-            if (event.target.tagName == "DIV") {
-                // event.preventDefault();
-                var data = event.dataTransfer.getData('text');
-                event.target.appendChild(document.getElementById(data));
-                // console.log(event.target.parentElement);
-            } else if (event.target.tagName == "IMG") {
-                // console.log(event.target.parentElement);
-                var data = event.dataTransfer.getData('text');
-                // console.log(data);
-                var origin_parent = document.getElementById(data).parentElement;
-                // console.log(origin_parent);
-                div = event.target.outerHTML;
-                sectionDiv = event.target.parentElement;
-                sectionImg = event.target;
-                // console.log(section);
-                sectionDiv.innerHTML = "";
-                origin_parent.appendChild(sectionImg);
-                sectionDiv.appendChild(document.getElementById(data));
-                // document.querySelector("#middle").innerHTML += div;
-                // document.querySelector(".answer").innerHTML = "";
-                // document.querySelector(".answer").appendChild(document.getElementById(data));
-            }
-            document.querySelector(".sendbtn").setAttribute("style", "display: block");
-        }
-    
-        function showAnswer(){
-            document.getElementById("fault").style.display = "none";
-            // document.getElementById("right").style.display = "none";
-            document.getElementById("middle").style.display = "none";
-            document.getElementById("question1").style.display = "none";
-            document.getElementById("question2").style.display = "flex";
-            document.querySelector(".sendbtn").style.display = "none";
-            document.querySelector(".nextbtn").style.display = "block";
-            
-        }
-    
-    
-    
-    </script>
+    <script src="../js/svg.js"></script>
 </body>
-
 </html>
